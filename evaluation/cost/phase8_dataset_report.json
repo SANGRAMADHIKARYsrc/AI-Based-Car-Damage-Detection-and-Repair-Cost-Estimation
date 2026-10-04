@@ -1,0 +1,237 @@
+{
+  "dataset_split": "train",
+  "total_records": 13424,
+  "target_statistics": {
+    "raw_cost": {
+      "mean": 13772.501112932061,
+      "std": 11011.939960707175,
+      "median": 10920.380000000001,
+      "iqr": 10976.574999999997,
+      "min": 100.0,
+      "max": 150000.0,
+      "p5": 3263.3,
+      "p25": 6726.25,
+      "p75": 17702.824999999997,
+      "p95": 32754.42149999995,
+      "skewness": 3.2613079130779563,
+      "kurtosis": 21.281756850262788
+    },
+    "log_cost": {
+      "mean": 9.274398500746575,
+      "std": 0.7491246779531914,
+      "median": 9.298477591195974,
+      "iqr": 0.9676142941366539,
+      "skewness": -0.6660042853387038,
+      "kurtosis": 2.8257282939384893,
+      "shapiro_sample_stat": 0.9560554011285733
+    }
+  },
+  "sector_breakdown": {
+    "ALL OVER": {
+      "count": 239,
+      "mean_cost": 23395.200585774055,
+      "median_cost": 17500.62,
+      "std_cost": 21314.299827478993
+    },
+    "BURN": {
+      "count": 126,
+      "mean_cost": 21515.629206349204,
+      "median_cost": 15695.835,
+      "std_cost": 18484.376298668696
+    },
+    "BURN - ENGINE": {
+      "count": 33,
+      "mean_cost": 12174.025757575759,
+      "median_cost": 8916.0,
+      "std_cost": 9191.82156175125
+    },
+    "FRONT END": {
+      "count": 7225,
+      "mean_cost": 13689.399165397923,
+      "median_cost": 11021.76,
+      "std_cost": 10344.302648979918
+    },
+    "HAIL": {
+      "count": 241,
+      "mean_cost": 12745.534854771786,
+      "median_cost": 11518.0,
+      "std_cost": 11052.466699090905
+    },
+    "MECHANICAL": {
+      "count": 169,
+      "mean_cost": 10087.601715976332,
+      "median_cost": 7352.0,
+      "std_cost": 9256.322317437702
+    },
+    "MINOR DENT/SCRATCHES": {
+      "count": 202,
+      "mean_cost": 8275.100891089109,
+      "median_cost": 6839.5,
+      "std_cost": 6940.535047612289
+    },
+    "NORMAL WEAR": {
+      "count": 48,
+      "mean_cost": 8467.081666666667,
+      "median_cost": 3895.0,
+      "std_cost": 10156.865107894
+    },
+    "REAR END": {
+      "count": 2260,
+      "mean_cost": 12601.9898539823,
+      "median_cost": 10228.0,
+      "std_cost": 8790.121815937737
+    },
+    "ROLLOVER": {
+      "count": 229,
+      "mean_cost": 24707.38864628821,
+      "median_cost": 20743.21,
+      "std_cost": 19721.988864420022
+    },
+    "SIDE": {
+      "count": 1907,
+      "mean_cost": 13538.176932354483,
+      "median_cost": 10988.21,
+      "std_cost": 9918.368144439646
+    },
+    "TOP/ROOF": {
+      "count": 142,
+      "mean_cost": 14733.561690140847,
+      "median_cost": 12098.095000000001,
+      "std_cost": 11482.345827217221
+    },
+    "UNDERCARRIAGE": {
+      "count": 150,
+      "mean_cost": 14595.093800000002,
+      "median_cost": 11091.175,
+      "std_cost": 13299.537994387194
+    },
+    "VANDALISM": {
+      "count": 132,
+      "mean_cost": 9586.18553030303,
+      "median_cost": 7054.115,
+      "std_cost": 8057.39629101088
+    },
+    "WATER/FLOOD": {
+      "count": 261,
+      "mean_cost": 14111.437777777777,
+      "median_cost": 11351.29,
+      "std_cost": 11436.479834749936
+    }
+  },
+  "brand_tier_breakdown": {
+    "luxury": {
+      "count": 1769,
+      "mean_cost": 17042.524844544943,
+      "median_cost": 13471.32,
+      "std_cost": 13763.72129678633
+    },
+    "premium": {
+      "count": 1677,
+      "mean_cost": 13833.957137745976,
+      "median_cost": 11583.3,
+      "std_cost": 9839.076199390218
+    },
+    "standard": {
+      "count": 9978,
+      "mean_cost": 13182.429582080578,
+      "median_cost": 10503.695,
+      "std_cost": 10539.503085400602
+    }
+  },
+  "operability_impact": {
+    "operable_mean_cost": 11902.765053885421,
+    "operable_median_cost": 9941.72,
+    "inoperable_mean_cost": 17348.487956172707,
+    "inoperable_median_cost": 13967.92,
+    "t_statistic": -23.82834130581997,
+    "p_value": 3.6264586978473836e-120
+  },
+  "feature_correlations": {
+    "vehicle_age": {
+      "pearson_r": -0.5384,
+      "pearson_p": 0.0,
+      "spearman_r": -0.6189,
+      "spearman_p": 0.0
+    },
+    "vehicle_age_sq": {
+      "pearson_r": -0.4558,
+      "pearson_p": 0.0,
+      "spearman_r": -0.6189,
+      "spearman_p": 0.0
+    },
+    "log_vehicle_age": {
+      "pearson_r": -0.5342,
+      "pearson_p": 0.0,
+      "spearman_r": -0.6189,
+      "spearman_p": 0.0
+    },
+    "is_operable": {
+      "pearson_r": -0.1925,
+      "pearson_p": 3.2854922505949437e-112,
+      "spearman_r": -0.2069,
+      "spearman_p": 9.662550857213158e-130
+    },
+    "starts_only": {
+      "pearson_r": 0.0594,
+      "pearson_p": 5.808151962815092e-12,
+      "spearman_r": 0.0643,
+      "spearman_p": 8.835211593082137e-14
+    },
+    "has_secondary_damage": {
+      "pearson_r": 0.063,
+      "pearson_p": 2.6774843841539813e-13,
+      "spearman_r": 0.0657,
+      "spearman_p": 2.6095477804338764e-14
+    },
+    "sector_cost_weight": {
+      "pearson_r": 0.0228,
+      "pearson_p": 0.008227144488787856,
+      "spearman_r": 0.0179,
+      "spearman_p": 0.03783425722433764
+    },
+    "base_sector_severity": {
+      "pearson_r": 0.1299,
+      "pearson_p": 1.3762555618095255e-51,
+      "spearman_r": 0.0702,
+      "spearman_p": 3.702288731245843e-16
+    },
+    "visual_damage_count": {
+      "pearson_r": 0.0857,
+      "pearson_p": 2.5788426906076416e-23,
+      "spearman_r": 0.0845,
+      "spearman_p": 1.100684459490112e-22
+    },
+    "visual_damaged_area_ratio": {
+      "pearson_r": 0.1699,
+      "pearson_p": 1.6023097302930443e-87,
+      "spearman_r": 0.1682,
+      "spearman_p": 9.467398956943698e-86
+    },
+    "visual_dsi": {
+      "pearson_r": 0.1853,
+      "pearson_p": 6.113933156934405e-104,
+      "spearman_r": 0.1701,
+      "spearman_p": 1.152106995870995e-87
+    },
+    "visual_severity_grade": {
+      "pearson_r": 0.1543,
+      "pearson_p": 2.79964940415365e-72,
+      "spearman_r": 0.1525,
+      "spearman_p": 1.1499100589387859e-70
+    }
+  },
+  "mutual_information": {
+    "vehicle_age": 0.2719,
+    "vehicle_age_sq": 0.2733,
+    "log_vehicle_age": 0.2722,
+    "is_operable": 0.0355,
+    "starts_only": 0.0015,
+    "has_secondary_damage": 0.0088,
+    "sector_cost_weight": 0.017,
+    "base_sector_severity": 0.0269,
+    "visual_damage_count": 0.0074,
+    "visual_damaged_area_ratio": 0.018,
+    "visual_dsi": 0.0293,
+    "visual_severity_grade": 0.0171
+  }
+}

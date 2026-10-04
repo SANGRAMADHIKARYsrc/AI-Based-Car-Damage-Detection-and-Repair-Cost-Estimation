@@ -1,0 +1,42 @@
+{
+  "train_instance_counts": {
+    "dent": 1806,
+    "scratch": 2560,
+    "crack": 651,
+    "glass shatter": 475,
+    "lamp broken": 494,
+    "tire flat": 225
+  },
+  "inverse_frequency_weights": {
+    "dent": 0.5732,
+    "scratch": 0.4044,
+    "crack": 1.5901,
+    "glass shatter": 2.1793,
+    "lamp broken": 2.0955,
+    "tire flat": 4.6007
+  },
+  "smoothed_sqrt_weights": {
+    "dent": 0.5882,
+    "scratch": 0.494,
+    "crack": 0.9797,
+    "glass shatter": 1.1469,
+    "lamp broken": 1.1247,
+    "tire flat": 1.6665
+  },
+  "effective_number_samples_weights": {
+    "dent": 0.4938,
+    "scratch": 0.4472,
+    "crack": 0.8622,
+    "glass shatter": 1.0911,
+    "lamp broken": 1.0583,
+    "tire flat": 2.0474
+  },
+  "recommended_loss_weights_tensor": [
+    0.5882,
+    0.494,
+    0.9797,
+    1.1469,
+    1.1247,
+    1.6665
+  ]
+}

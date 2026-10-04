@@ -1,0 +1,42 @@
+# Phase 7 — Severity Assessment Experiment Configuration
+# ResNet18 on data3a 3-class damage severity benchmark (minor, moderate, severe)
+
+experiment:
+  name: "phase7_severity_assessment_resnet18"
+  phase: "7"
+  date: "2026-10-04"
+  researcher: "car-damage-ai"
+
+dataset:
+  name: "data3a-severity"
+  source: "data/processed/severity_metadata.csv"
+  num_images: 1631
+  num_classes: 3
+  classes: ["minor", "moderate", "severe"]
+  split_ratio: [0.70, 0.15, 0.15]  # Train 1,141, Val 245, Test 245
+
+model:
+  architecture: "ResNet18"
+  backbone: "resnet18"
+  pretrained: true
+  num_classes: 3
+  dropout_rate: 0.3
+  hidden_dim: 128
+
+training:
+  image_size: 224
+  batch_size: 32
+  epochs: 25
+  patience: 8
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  optimizer: "AdamW"
+  scheduler: "cosine_annealing"
+  label_smoothing: 0.05
+  random_seed: 42
+  amp: true
+  workers: 0
+
+targets:
+  val_macro_f1_target: 0.70
+  test_accuracy_target: 0.72

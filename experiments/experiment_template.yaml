@@ -1,0 +1,49 @@
+# Experiment configuration template
+# Copy this file for each new experiment
+
+experiment:
+  name: ""
+  phase: ""
+  date: ""
+  researcher: ""
+
+dataset:
+  name: ""
+  version: ""
+  split: ""
+  num_train: 0
+  num_val: 0
+  num_test: 0
+
+model:
+  architecture: ""
+  version: ""
+  pretrained: true
+  weights: ""
+
+training:
+  image_size: 640
+  batch_size: 16
+  epochs: 100
+  learning_rate: 0.01
+  optimizer: "SGD"
+  scheduler: ""
+  augmentation: ""
+  random_seed: 42
+
+hardware:
+  gpu: ""
+  cpu: ""
+  ram: ""
+  os: ""
+
+results:
+  precision: 0.0
+  recall: 0.0
+  f1: 0.0
+  mAP50: 0.0
+  mAP50_95: 0.0
+  inference_time_ms: 0.0
+  training_time_hours: 0.0
+
+notes: ""

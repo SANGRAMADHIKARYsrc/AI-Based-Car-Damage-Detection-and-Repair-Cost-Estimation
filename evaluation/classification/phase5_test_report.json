@@ -1,0 +1,102 @@
+{
+  "evaluation_split": "test",
+  "sample_count": 784,
+  "model_architecture": "efficientnet_b0",
+  "latency_ms_per_crop": 2.76,
+  "overall_metrics": {
+    "accuracy": 0.9413,
+    "macro_f1": 0.9539,
+    "weighted_f1": 0.9412,
+    "macro_precision": 0.9609,
+    "macro_recall": 0.9487
+  },
+  "per_class_metrics": {
+    "dent": {
+      "precision": 0.9139,
+      "recall": 0.9449,
+      "f1_score": 0.9292,
+      "support": 236
+    },
+    "scratch": {
+      "precision": 0.9379,
+      "recall": 0.9349,
+      "f1_score": 0.9364,
+      "support": 307
+    },
+    "crack": {
+      "precision": 0.9833,
+      "recall": 0.8551,
+      "f1_score": 0.9147,
+      "support": 69
+    },
+    "glass shatter": {
+      "precision": 0.9857,
+      "recall": 0.9718,
+      "f1_score": 0.9787,
+      "support": 71
+    },
+    "lamp broken": {
+      "precision": 0.9444,
+      "recall": 0.9855,
+      "f1_score": 0.9645,
+      "support": 69
+    },
+    "tire flat": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 32
+    }
+  },
+  "phase4_vs_phase5_f1_comparison": {},
+  "confusion_matrix": [
+    [
+      223,
+      12,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      16,
+      287,
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      3,
+      7,
+      59,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      69,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      68,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      32
+    ]
+  ]
+}

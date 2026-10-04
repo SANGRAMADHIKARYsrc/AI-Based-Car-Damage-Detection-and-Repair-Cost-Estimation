@@ -1,0 +1,374 @@
+[
+  {
+    "image": "000012.jpg",
+    "damages": [
+      {
+        "bbox": [
+          22,
+          211,
+          366,
+          559
+        ],
+        "damage_type": "tire flat",
+        "damage_conf": 0.977,
+        "component": "wheel_tire",
+        "component_conf": 0.968,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 0.65
+      }
+    ]
+  },
+  {
+    "image": "000015.jpg",
+    "damages": [
+      {
+        "bbox": [
+          331,
+          490,
+          736,
+          601
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.881,
+        "component": "front_bumper",
+        "component_conf": 0.609,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 1.15
+      }
+    ]
+  },
+  {
+    "image": "000023.jpg",
+    "damages": [
+      {
+        "bbox": [
+          269,
+          166,
+          509,
+          287
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.924,
+        "component": "hood",
+        "component_conf": 0.469,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 1.35
+      }
+    ]
+  },
+  {
+    "image": "000033.jpg",
+    "damages": [
+      {
+        "bbox": [
+          282,
+          237,
+          659,
+          537
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.936,
+        "component": "hood",
+        "component_conf": 0.45,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 1.35
+      }
+    ]
+  },
+  {
+    "image": "000040.jpg",
+    "damages": [
+      {
+        "bbox": [
+          401,
+          280,
+          676,
+          617
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.905,
+        "component": "door",
+        "component_conf": 0.45,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 1.25
+      },
+      {
+        "bbox": [
+          760,
+          21,
+          1000,
+          427
+        ],
+        "damage_type": "lamp broken",
+        "damage_conf": 0.8,
+        "component": "lamp",
+        "component_conf": 0.8,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 0.85
+      },
+      {
+        "bbox": [
+          387,
+          0,
+          812,
+          415
+        ],
+        "damage_type": "lamp broken",
+        "damage_conf": 0.643,
+        "component": "lamp",
+        "component_conf": 0.651,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 0.85
+      }
+    ]
+  },
+  {
+    "image": "000042.jpg",
+    "damages": [
+      {
+        "bbox": [
+          219,
+          114,
+          689,
+          259
+        ],
+        "damage_type": "glass shatter",
+        "damage_conf": 0.972,
+        "component": "windshield_glass",
+        "component_conf": 0.963,
+        "copart_sector": "MINOR DENT/SCRATCHES",
+        "cost_multiplier": 0.75
+      },
+      {
+        "bbox": [
+          179,
+          267,
+          340,
+          445
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.934,
+        "component": "door",
+        "component_conf": 0.45,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 1.25
+      },
+      {
+        "bbox": [
+          78,
+          240,
+          173,
+          387
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.922,
+        "component": "quarter_panel",
+        "component_conf": 0.45,
+        "copart_sector": "REAR END",
+        "cost_multiplier": 1.45
+      },
+      {
+        "bbox": [
+          208,
+          72,
+          540,
+          136
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.795,
+        "component": "roof",
+        "component_conf": 0.79,
+        "copart_sector": "ROLLOVER",
+        "cost_multiplier": 1.8
+      },
+      {
+        "bbox": [
+          296,
+          270,
+          825,
+          407
+        ],
+        "damage_type": "lamp broken",
+        "damage_conf": 0.693,
+        "component": "lamp",
+        "component_conf": 0.698,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 0.85
+      },
+      {
+        "bbox": [
+          73,
+          234,
+          159,
+          366
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.925,
+        "component": "quarter_panel",
+        "component_conf": 0.45,
+        "copart_sector": "REAR END",
+        "cost_multiplier": 1.45
+      }
+    ]
+  },
+  {
+    "image": "000044.jpg",
+    "damages": [
+      {
+        "bbox": [
+          118,
+          409,
+          602,
+          569
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.733,
+        "component": "front_bumper",
+        "component_conf": 0.45,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 1.15
+      },
+      {
+        "bbox": [
+          509,
+          208,
+          728,
+          370
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.525,
+        "component": "door",
+        "component_conf": 0.45,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 1.25
+      },
+      {
+        "bbox": [
+          157,
+          415,
+          454,
+          529
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.872,
+        "component": "front_bumper",
+        "component_conf": 0.45,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 1.15
+      },
+      {
+        "bbox": [
+          889,
+          155,
+          999,
+          255
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.762,
+        "component": "quarter_panel",
+        "component_conf": 0.45,
+        "copart_sector": "REAR END",
+        "cost_multiplier": 1.45
+      }
+    ]
+  },
+  {
+    "image": "000057.jpg",
+    "damages": [
+      {
+        "bbox": [
+          347,
+          4,
+          991,
+          559
+        ],
+        "damage_type": "tire flat",
+        "damage_conf": 0.968,
+        "component": "wheel_tire",
+        "component_conf": 0.959,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 0.65
+      }
+    ]
+  },
+  {
+    "image": "000082.jpg",
+    "damages": [
+      {
+        "bbox": [
+          321,
+          152,
+          894,
+          483
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.9,
+        "component": "door",
+        "component_conf": 0.451,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 1.25
+      },
+      {
+        "bbox": [
+          429,
+          0,
+          870,
+          102
+        ],
+        "damage_type": "lamp broken",
+        "damage_conf": 0.946,
+        "component": "lamp",
+        "component_conf": 0.939,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 0.85
+      }
+    ]
+  },
+  {
+    "image": "000088.jpg",
+    "damages": [
+      {
+        "bbox": [
+          142,
+          136,
+          526,
+          563
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.465,
+        "component": "door",
+        "component_conf": 0.45,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 1.25
+      },
+      {
+        "bbox": [
+          203,
+          609,
+          372,
+          750
+        ],
+        "damage_type": "dent",
+        "damage_conf": 0.918,
+        "component": "front_bumper",
+        "component_conf": 0.631,
+        "copart_sector": "FRONT END",
+        "cost_multiplier": 1.15
+      },
+      {
+        "bbox": [
+          90,
+          107,
+          519,
+          561
+        ],
+        "damage_type": "scratch",
+        "damage_conf": 0.456,
+        "component": "door",
+        "component_conf": 0.45,
+        "copart_sector": "SIDE",
+        "cost_multiplier": 1.25
+      }
+    ]
+  }
+]

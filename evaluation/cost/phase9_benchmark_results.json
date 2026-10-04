@@ -1,0 +1,93 @@
+{
+  "best_model_name": "HistGradientBoosting",
+  "benchmark_val_results": {
+    "Dummy (Median)": {
+      "mae_dollar": 6914.54,
+      "median_ae_dollar": 4951.19,
+      "rmse_dollar": 10656.73,
+      "mape_pct": 94.97,
+      "r2_dollar": -0.0652,
+      "mae_log": 0.5719,
+      "rmse_log": 0.7467,
+      "r2_log": -0.0019
+    },
+    "Ridge Regression": {
+      "mae_dollar": 4894.81,
+      "median_ae_dollar": 2984.78,
+      "rmse_dollar": 8203.91,
+      "mape_pct": 75.72,
+      "r2_dollar": 0.3687,
+      "mae_log": 0.4008,
+      "rmse_log": 0.58,
+      "r2_log": 0.3954
+    },
+    "Random Forest": {
+      "mae_dollar": 4930.4,
+      "median_ae_dollar": 3048.37,
+      "rmse_dollar": 8156.54,
+      "mape_pct": 72.97,
+      "r2_dollar": 0.376,
+      "mae_log": 0.408,
+      "rmse_log": 0.5853,
+      "r2_log": 0.3844
+    },
+    "HistGradientBoosting": {
+      "mae_dollar": 4829.9,
+      "median_ae_dollar": 2951.9,
+      "rmse_dollar": 8038.18,
+      "mape_pct": 73.07,
+      "r2_dollar": 0.394,
+      "mae_log": 0.3976,
+      "rmse_log": 0.5735,
+      "r2_log": 0.4089
+    },
+    "XGBoost": {
+      "mae_dollar": 4832.94,
+      "median_ae_dollar": 2959.52,
+      "rmse_dollar": 8040.51,
+      "mape_pct": 70.74,
+      "r2_dollar": 0.3936,
+      "mae_log": 0.3977,
+      "rmse_log": 0.5704,
+      "r2_log": 0.4153
+    },
+    "LightGBM": {
+      "mae_dollar": 4837.74,
+      "median_ae_dollar": 2937.74,
+      "rmse_dollar": 8037.95,
+      "mape_pct": 71.68,
+      "r2_dollar": 0.394,
+      "mae_log": 0.3981,
+      "rmse_log": 0.5709,
+      "r2_log": 0.4144
+    }
+  },
+  "ablation_experiment": {
+    "actuarial_only": {
+      "num_features": 45,
+      "mae_dollar": 4816.44,
+      "median_ae_dollar": 2979.57,
+      "rmse_dollar": 8014.0,
+      "mape_pct": 73.12,
+      "r2_dollar": 0.3976,
+      "mae_log": 0.3962,
+      "rmse_log": 0.5707,
+      "r2_log": 0.4147
+    },
+    "multimodal_actuarial_visual": {
+      "num_features": 57,
+      "mae_dollar": 4837.74,
+      "median_ae_dollar": 2937.74,
+      "rmse_dollar": 8037.95,
+      "mape_pct": 71.68,
+      "r2_dollar": 0.394,
+      "mae_log": 0.3981,
+      "rmse_log": 0.5709,
+      "r2_log": 0.4144
+    },
+    "gain": {
+      "mae_reduction_dollar": -21.3,
+      "r2_gain": -0.0036
+    }
+  }
+}

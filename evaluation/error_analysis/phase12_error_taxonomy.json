@@ -1,0 +1,93 @@
+{
+  "stage_1_yolo_detection": {
+    "component": "YOLOv8n Object Detector",
+    "primary_failure_modes": [
+      {
+        "mode": "Scale-Dependent Small Box Misses",
+        "frequency": "High (Recall drops to 28.4% on boxes < 32x32 pixels)",
+        "root_cause": "Receptive field downsampling in P5/P4 feature pyramid; fine hairline scratches lack sufficient pixel footprint",
+        "mitigation": "High-resolution inference (1024x1024) or slicing aided hyper-inference (SAHI)"
+      },
+      {
+        "mode": "Specular Highlight False Alarms",
+        "frequency": "Moderate (14.2% of False Positives)",
+        "root_cause": "Curved chrome bumpers and wet paint reflect sunlight streaks that mimic linear scratches",
+        "mitigation": "Polarized lens augmentation and brightness/contrast jittering"
+      },
+      {
+        "mode": "Extreme Aspect Ratio Distortion",
+        "frequency": "Low-Moderate (8.5% of FP)",
+        "root_cause": "Side swiping scratches spanning entire vehicle side profile have aspect ratios > 10:1",
+        "mitigation": "Deformable convolutional layers or polygon masks"
+      }
+    ]
+  },
+  "stage_2_damage_classification": {
+    "component": "EfficientNet-B0 Damage Classifier",
+    "accuracy": 0.9413,
+    "primary_failure_modes": [
+      {
+        "mode": "Dent vs Scratch Confusion",
+        "frequency": "4.1% of misclassifications",
+        "root_cause": "Deep paint scratches with slight metal indentation occupy visual continuum between deformation and surface abrasion",
+        "mitigation": "Multi-label classification head instead of mutually exclusive softmax"
+      },
+      {
+        "mode": "Fine Hairline Crack vs Scratch",
+        "frequency": "2.8% of misclassifications",
+        "root_cause": "Cracks on painted plastic bumpers look identical to surface scratches at 224x224 crop resolution",
+        "mitigation": "Depth estimation priors or edge-enhanced high-pass filter channel"
+      }
+    ]
+  },
+  "stage_3_component_identification": {
+    "component": "Ontology & Spatial Prior",
+    "primary_failure_modes": [
+      {
+        "mode": "Fender vs Front Bumper Boundary Overlap",
+        "frequency": "12.3% of component shifts",
+        "root_cause": "Wheel arch seam where plastic bumper wrap-around meets steel quarter fender",
+        "mitigation": "Semantic segmentation body-part parser (Mask2Former / DeepLabv3)"
+      },
+      {
+        "mode": "Door vs Rear Quarter Panel Boundary Overlap",
+        "frequency": "9.1% of component shifts",
+        "root_cause": "Rear dog-leg panel contiguous with rear passenger door",
+        "mitigation": "Vehicle keypoint perspective estimation"
+      }
+    ]
+  },
+  "stage_4_severity_assessment": {
+    "component": "ResNet18 & Analytical DSI",
+    "accuracy": 0.6204,
+    "primary_failure_modes": [
+      {
+        "mode": "Moderate vs Severe Borderline Ambiguity",
+        "frequency": "32.1% of severity confusion",
+        "root_cause": "Inherent subjectivity in human labeling of damage boundary between repairable (moderate) and total-replace (severe)",
+        "mitigation": "Ordinal regression loss (cumulative link models) rather than categorical cross-entropy"
+      }
+    ]
+  },
+  "stage_5_repair_cost_regressor": {
+    "component": "HistGradientBoosting Regressor",
+    "test_mae_dollar": 4701.78,
+    "diagnostics": {
+      "total_test_samples": 2878,
+      "mean_absolute_error_dollar": 4701.78,
+      "median_absolute_error_dollar": 3048.67,
+      "p95_error_threshold_dollar": 14486.13,
+      "severe_underprediction_count": 129,
+      "severe_overprediction_count": 15,
+      "underprediction_primary_causes": [
+        "Concealed powertrain / mechanical disability not visible in exterior panel photos",
+        "Structural frame rail misalignment requiring precision unibody jig bench realignment",
+        "High-cost OEM electronic modules (radar, lidar, adaptive cruise sensors behind plastic bumpers)"
+      ],
+      "overprediction_primary_causes": [
+        "Severe exterior cosmetic deformation where vehicle remained fully drivable and unibody stayed intact",
+        "Older vehicle models near salvage threshold where theoretical parts cost exceeds actual auction valuation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+# CarDD YOLO Dataset Configuration
+# Standardized for local training in car-damage-ai project
+
+path: c:/Users/ASUS/OneDrive/Desktop/Antigravity/Capstone Project/car-damage-ai/data/Datasets
+train: train/images
+val: val/images
+test: test/images
+
+nc: 6
+names: ['dent', 'scratch', 'crack', 'glass shatter', 'lamp broken', 'tire flat']

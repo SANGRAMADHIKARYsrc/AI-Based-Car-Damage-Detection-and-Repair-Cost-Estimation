@@ -1,0 +1,258 @@
+{
+  "cardd_yolo": {
+    "train": {
+      "image_count": 2816,
+      "label_count": 2816,
+      "missing_labels": [],
+      "missing_images": [],
+      "corrupted_images": [],
+      "total_instances": 6211,
+      "mean_instances_per_img": 2.21,
+      "class_distribution": {
+        "dent": 1806,
+        "scratch": 2560,
+        "crack": 651,
+        "glass shatter": 475,
+        "lamp broken": 494,
+        "tire flat": 225
+      },
+      "invalid_bboxes": 0,
+      "resolutions_sample": [
+        [
+          1000,
+          782
+        ],
+        [
+          1000,
+          846
+        ],
+        [
+          682,
+          1000
+        ],
+        [
+          1000,
+          974
+        ],
+        [
+          1000,
+          611
+        ]
+      ],
+      "common_resolution": [
+        1000,
+        667
+      ],
+      "mean_bbox_area": 0.1707,
+      "median_bbox_area": 0.0786,
+      "min_bbox_area": 0.000175,
+      "max_bbox_area": 1.0
+    },
+    "val": {
+      "image_count": 810,
+      "label_count": 810,
+      "missing_labels": [],
+      "missing_images": [],
+      "corrupted_images": [],
+      "total_instances": 1744,
+      "mean_instances_per_img": 2.15,
+      "class_distribution": {
+        "dent": 501,
+        "scratch": 728,
+        "crack": 177,
+        "glass shatter": 135,
+        "lamp broken": 141,
+        "tire flat": 62
+      },
+      "invalid_bboxes": 0,
+      "resolutions_sample": [
+        [
+          1000,
+          675
+        ],
+        [
+          1000,
+          739
+        ],
+        [
+          1000,
+          748
+        ],
+        [
+          1000,
+          693
+        ],
+        [
+          750,
+          1000
+        ]
+      ],
+      "common_resolution": [
+        1000,
+        667
+      ],
+      "mean_bbox_area": 0.1735,
+      "median_bbox_area": 0.0834,
+      "min_bbox_area": 0.000182,
+      "max_bbox_area": 1.0
+    },
+    "test": {
+      "image_count": 374,
+      "label_count": 374,
+      "missing_labels": [],
+      "missing_images": [],
+      "corrupted_images": [],
+      "total_instances": 785,
+      "mean_instances_per_img": 2.1,
+      "class_distribution": {
+        "dent": 236,
+        "scratch": 307,
+        "crack": 70,
+        "glass shatter": 71,
+        "lamp broken": 69,
+        "tire flat": 32
+      },
+      "invalid_bboxes": 0,
+      "resolutions_sample": [
+        [
+          667,
+          1000
+        ],
+        [
+          1000,
+          666
+        ],
+        [
+          1000,
+          605
+        ],
+        [
+          1000,
+          669
+        ],
+        [
+          1000,
+          672
+        ]
+      ],
+      "common_resolution": [
+        1000,
+        667
+      ],
+      "mean_bbox_area": 0.1782,
+      "median_bbox_area": 0.0848,
+      "min_bbox_area": 0.000614,
+      "max_bbox_area": 1.0
+    }
+  },
+  "severity_data3a": {
+    "training": {
+      "01-minor": 452,
+      "02-moderate": 463,
+      "03-severe": 468,
+      "total": 1383,
+      "corrupted": [],
+      "common_res": [
+        259,
+        194
+      ]
+    },
+    "validation": {
+      "01-minor": 82,
+      "02-moderate": 75,
+      "03-severe": 91,
+      "total": 248,
+      "corrupted": [],
+      "common_res": [
+        259,
+        194
+      ]
+    }
+  },
+  "via_polygons_vehide": {
+    "0Train_via_annos.json": {
+      "image_count": 11621,
+      "polygon_region_count": 30046,
+      "mean_regions_per_img": 2.59,
+      "damage_classes": {
+        "missing part (mat_bo_phan)": 2370,
+        "tear/crack (rach)": 4546,
+        "dent (mop_lom)": 4709,
+        "scratch (tray_son)": 12267,
+        "shattered glass (vo_kinh)": 1824,
+        "puncture/hole (thung)": 2006,
+        "broken lamp (be_den)": 2324
+      }
+    },
+    "0Val_via_annos.json": {
+      "image_count": 2324,
+      "polygon_region_count": 6035,
+      "mean_regions_per_img": 2.6,
+      "damage_classes": {
+        "tear/crack (rach)": 963,
+        "scratch (tray_son)": 2380,
+        "shattered glass (vo_kinh)": 397,
+        "missing part (mat_bo_phan)": 448,
+        "puncture/hole (thung)": 417,
+        "dent (mop_lom)": 972,
+        "broken lamp (be_den)": 458
+      }
+    }
+  },
+  "copart_repair_cost": {
+    "total_snapshot_records": 26144,
+    "unique_lots": 26144,
+    "total_with_repair_cost": 26144,
+    "total_nonzero_repair_cost": 19235,
+    "repair_cost_stats": {
+      "mean": 13984.6,
+      "median": 10927.5,
+      "std": 21954.53,
+      "min": 100.0,
+      "q25": 6709.11,
+      "q75": 17703.85,
+      "max": 2576733.0
+    },
+    "top_damage_descriptions": {
+      "FRONT END": 12566,
+      "REAR END": 3903,
+      "SIDE": 3438,
+      "MINOR DENT/SCRATCHES": 1534,
+      "MECHANICAL": 1047,
+      "NORMAL WEAR": 565,
+      "ALL OVER": 492,
+      "WATER/FLOOD": 457,
+      "HAIL": 409,
+      "ROLLOVER": 403
+    },
+    "top_makes": {
+      "TOYOTA": 3206,
+      "FORD": 2922,
+      "CHEVROLET": 2673,
+      "HONDA": 2574,
+      "NISSAN": 1923,
+      "HYUNDAI": 1446,
+      "KIA": 1241,
+      "JEEP": 884,
+      "DODGE": 740,
+      "SUBARU": 661
+    },
+    "year_distribution": {
+      "min_year": 96,
+      "max_year": 2027,
+      "median_year": 2017
+    }
+  },
+  "leakage_and_duplicates": {
+    "cardd_train_val_overlap": 0,
+    "cardd_train_test_overlap": 0,
+    "cardd_val_test_overlap": 0,
+    "cardd_train_exact_duplicates": 0,
+    "cardd_val_exact_duplicates": 0,
+    "cardd_test_exact_duplicates": 0,
+    "data3a_train_val_overlap": 0,
+    "data3a_training_exact_duplicates": 1,
+    "data3a_validation_exact_duplicates": 0,
+    "cardd_data3a_overlap": 0
+  }
+}

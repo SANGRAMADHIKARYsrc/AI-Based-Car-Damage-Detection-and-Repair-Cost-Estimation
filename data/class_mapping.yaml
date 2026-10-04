@@ -1,0 +1,55 @@
+# Cross-Dataset Class Mapping Specification
+# Maps between CarDD (6 detection classes) and VehiDE (7 segmentation classes)
+
+cardd_classes:
+  0: dent
+  1: scratch
+  2: crack
+  3: glass shatter
+  4: lamp broken
+  5: tire flat
+
+vehide_classes:
+  tray_son:
+    english: scratch
+    cardd_id: 1
+    cardd_name: scratch
+  mop_lom:
+    english: dent
+    cardd_id: 0
+    cardd_name: dent
+  rach:
+    english: tear / crack
+    cardd_id: 2
+    cardd_name: crack
+  be_den:
+    english: broken lamp
+    cardd_id: 4
+    cardd_name: lamp broken
+  vo_kinh:
+    english: shattered glass
+    cardd_id: 3
+    cardd_name: glass shatter
+  thung:
+    english: puncture / hole
+    cardd_id: 2 # mapped to crack/puncture group
+    cardd_name: crack
+  mat_bo_phan:
+    english: missing part
+    cardd_id: null # unmapped in CarDD 6-class ontology
+    cardd_name: null
+
+severity_classes:
+  0: minor
+  1: moderate
+  2: severe
+
+copart_damage_mapping:
+  "FRONT END": "front_bumper_hood_radiator"
+  "REAR END": "rear_bumper_trunk_taillights"
+  "SIDE": "doors_fenders_quarter_panels"
+  "MINOR DENT/SCRATCHES": "cosmetic_body_panels"
+  "MECHANICAL": "undercarriage_engine"
+  "ALL OVER": "total_body"
+  "HAIL": "pitted_sheet_metal"
+  "ROLLOVER": "roof_pillars_frame"

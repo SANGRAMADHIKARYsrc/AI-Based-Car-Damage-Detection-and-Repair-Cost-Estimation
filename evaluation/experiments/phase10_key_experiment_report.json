@@ -1,0 +1,53 @@
+{
+  "paradigm_a_actuarial_only": {
+    "name": "Actuarial Metadata Only",
+    "description": "Tabular insurance vehicle attributes without visual damage data",
+    "explainability": "Moderate (Tabular features only)",
+    "metrics": {
+      "mae_dollar": 4672.92,
+      "median_ae_dollar": 2995.77,
+      "rmse_dollar": 7513.76,
+      "mape_pct": 57.81,
+      "r2_dollar": 0.4592,
+      "mae_log": 0.3912,
+      "rmse_log": 0.5519,
+      "r2_log": 0.4456
+    }
+  },
+  "paradigm_b_direct_image_regression": {
+    "name": "Direct End-to-End Image Regression",
+    "description": "Black-box deep neural network predicting cost directly from image",
+    "explainability": "Low (Uninterpretable visual embeddings)",
+    "metrics": {
+      "mae_dollar": 6877.66,
+      "median_ae_dollar": 4935.33,
+      "rmse_dollar": 10388.61,
+      "mape_pct": 85.79,
+      "r2_dollar": -0.0339,
+      "mae_log": 0.5666,
+      "rmse_log": 0.7293,
+      "r2_log": 0.032
+    }
+  },
+  "paradigm_c_proposed_multistage": {
+    "name": "Proposed Multi-Stage Pipeline (Ours)",
+    "description": "YOLOv8 -> EfficientNet-B0 -> 10-Component Ontology -> DSI -> Actuarial Regressor",
+    "explainability": "High (Transparent damage bboxes, component attribution, severity scores)",
+    "metrics": {
+      "mae_dollar": 4701.78,
+      "median_ae_dollar": 3048.67,
+      "rmse_dollar": 7557.87,
+      "mape_pct": 57.77,
+      "r2_dollar": 0.4528,
+      "mae_log": 0.3928,
+      "rmse_log": 0.5521,
+      "r2_log": 0.4452
+    }
+  },
+  "comparisons": {
+    "mae_improvement_vs_direct_b_dollar": 2175.88,
+    "mae_improvement_vs_direct_b_pct": 31.64,
+    "r2_gain_vs_direct_b": 0.4867,
+    "core_hypothesis_confirmed": true
+  }
+}

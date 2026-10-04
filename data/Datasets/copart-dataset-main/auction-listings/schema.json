@@ -1,0 +1,429 @@
+[
+  {
+    "name": "_primaryKey",
+    "type": "string",
+    "description": "Unique identifier for this record",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "_firstSeenAt",
+    "type": "datetime",
+    "description": "First time this record was seen",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "_lastSeenAt",
+    "type": "datetime",
+    "description": "Last time this record was updated",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "lotId",
+    "type": "string",
+    "description": "Unique Copart lot number (auction identifier)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "updatedAt",
+    "type": "datetime",
+    "description": "Timestamp when Copart last updated the listing data",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "vin",
+    "type": "string",
+    "description": "Vehicle Identification Number (17-character unique code)",
+    "fillRate": 100,
+    "premium": true
+  },
+  {
+    "name": "yardNumber",
+    "type": "string",
+    "description": "Copart yard/facility number",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "yardName",
+    "type": "string",
+    "description": "Copart yard/facility name (e.g., \"FL - MIAMI NORTH\")",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "saleDate",
+    "type": "datetime",
+    "description": "Scheduled auction sale date",
+    "fillRate": 92,
+    "premium": false
+  },
+  {
+    "name": "saleDayOfWeek",
+    "type": "string",
+    "description": "Day of week for the auction (e.g., TUESDAY, FRIDAY)",
+    "fillRate": 92,
+    "premium": false
+  },
+  {
+    "name": "saleTime",
+    "type": "string",
+    "description": "Auction start time in HHMM format (e.g., \"1000\" = 10:00 AM)",
+    "fillRate": 92,
+    "premium": false
+  },
+  {
+    "name": "saleTimeZone",
+    "type": "string",
+    "description": "Time zone for auction time (e.g., EST)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "itemNumber",
+    "type": "string",
+    "description": "Item sequence number within the auction",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "vehicleType",
+    "type": "string",
+    "description": "Type code (V = Vehicle, C = Cycle/Motorcycle, K = Truck/Commercial)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "year",
+    "type": "float",
+    "description": "Vehicle model year",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "make",
+    "type": "string",
+    "description": "Vehicle manufacturer (e.g., NISSAN, TOYOTA, MERCEDES-BENZ)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "modelGroup",
+    "type": "string",
+    "description": "Vehicle model group (e.g., SENTRA, TACOMA, GLE-CLASS)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "modelDetail",
+    "type": "string",
+    "description": "Detailed model name (e.g., SENTRA SV, TACOMA DOU, GLE COUPE)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "bodyStyle",
+    "type": "string",
+    "description": "Vehicle body style",
+    "fillRate": 61,
+    "premium": false
+  },
+  {
+    "name": "exteriorColor",
+    "type": "string",
+    "description": "Vehicle exterior color (e.g., WHITE, BLACK, GRAY)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "damageDescription",
+    "type": "string",
+    "description": "Primary damage description (e.g., FRONT END, REAR END, MINOR DENT/SCRATCHES)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "secondaryDamage",
+    "type": "string",
+    "description": "Secondary damage description (e.g., SIDE, REAR END)",
+    "fillRate": 44,
+    "premium": false
+  },
+  {
+    "name": "saleTitleState",
+    "type": "string",
+    "description": "State where the title is held (e.g., FL)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "saleTitleType",
+    "type": "string",
+    "description": "Title type code (SC = Salvage Certificate, CD = Certificate of Destruction, NR = Non-Repairable, DV = Dealer Vehicle, ST = Salvage Title, CT = Clear Title, RB = Rebuildable, AQ = Acquisition)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "hasKeys",
+    "type": "string",
+    "description": "Whether keys are available (YES/NO/EXM - Exempt)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "lotCondCode",
+    "type": "string",
+    "description": "Lot condition code (D = Drivable, E = Enhanced inspection, S = Stationary)",
+    "fillRate": 96,
+    "premium": false
+  },
+  {
+    "name": "mileage",
+    "type": "float",
+    "description": "Odometer reading in miles",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "odometerBrand",
+    "type": "string",
+    "description": "Odometer status (A = Actual, N = Not Actual, E = Exempt)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "estRetailValue",
+    "type": "float",
+    "description": "Estimated retail value in USD",
+    "fillRate": 100,
+    "premium": true
+  },
+  {
+    "name": "repairCost",
+    "type": "float",
+    "description": "Estimated repair cost in USD",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "engine",
+    "type": "string",
+    "description": "Engine description (e.g., \"3.5L 6\", \"2.0L 4\")",
+    "fillRate": 96,
+    "premium": false
+  },
+  {
+    "name": "drivetrain",
+    "type": "string",
+    "description": "Drivetrain type (All wheel drive, Front-wheel Drive, Rear-wheel drive)",
+    "fillRate": 97,
+    "premium": false
+  },
+  {
+    "name": "transmission",
+    "type": "string",
+    "description": "Transmission type (e.g., AUTOMATIC)",
+    "fillRate": 99,
+    "premium": false
+  },
+  {
+    "name": "fuelType",
+    "type": "string",
+    "description": "Fuel type (e.g., GAS)",
+    "fillRate": 98,
+    "premium": false
+  },
+  {
+    "name": "cylinders",
+    "type": "float",
+    "description": "Number of engine cylinders",
+    "fillRate": 96,
+    "premium": false
+  },
+  {
+    "name": "runsDrives",
+    "type": "string",
+    "description": "Run/drive status (Run & Drive Verified, Vehicle Starts, DEFAULT, null)",
+    "fillRate": 96,
+    "premium": false
+  },
+  {
+    "name": "saleStatus",
+    "type": "string",
+    "description": "Auction sale status (Pure Sale, On Minimum Bid)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "highBid",
+    "type": "float",
+    "description": "Current high bid amount in USD",
+    "fillRate": 100,
+    "premium": true
+  },
+  {
+    "name": "specialNote",
+    "type": "string",
+    "description": "Special notes (e.g., \"ODOMETER IS IN KILOMETERS\")",
+    "fillRate": 4,
+    "premium": false
+  },
+  {
+    "name": "locationCity",
+    "type": "string",
+    "description": "Vehicle storage location city",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "locationState",
+    "type": "string",
+    "description": "Vehicle storage location state",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "locationZip",
+    "type": "string",
+    "description": "Vehicle storage location ZIP code",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "locationCountry",
+    "type": "string",
+    "description": "Vehicle storage location country (e.g., USA)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "currencyCode",
+    "type": "string",
+    "description": "Currency code for prices (e.g., USD)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "imageThumbnail",
+    "type": "string",
+    "description": "Thumbnail image URL",
+    "fillRate": 100,
+    "premium": true
+  },
+  {
+    "name": "imageUrl",
+    "type": "string",
+    "description": "Full-size image URL",
+    "fillRate": 100,
+    "premium": true
+  },
+  {
+    "name": "gridRow",
+    "type": "string",
+    "description": "Yard grid/row location (e.g., \"A130\", \"SD006\", \"RACK\", \"*OFF\" for offsite)",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "makeOfferEligible",
+    "type": "bool",
+    "description": "Whether Make-an-Offer is available",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "buyItNowPrice",
+    "type": "float",
+    "description": "Buy-It-Now price in USD (0 if not available)",
+    "fillRate": 100,
+    "premium": true
+  },
+  {
+    "name": "trim",
+    "type": "string",
+    "description": "Vehicle trim level (e.g., SV, EX, LUXE, AMG 53 4MATIC)",
+    "fillRate": 84,
+    "premium": false
+  },
+  {
+    "name": "rentals",
+    "type": "bool",
+    "description": "Whether vehicle was a former rental",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "wholesale",
+    "type": "bool",
+    "description": "Whether listing is wholesale",
+    "fillRate": 100,
+    "premium": false
+  },
+  {
+    "name": "sellerName",
+    "type": "string",
+    "description": "Seller name (e.g., \"State Farm Insurance\", \"GEICO\")",
+    "fillRate": 35,
+    "premium": true
+  },
+  {
+    "name": "offsiteAddress1",
+    "type": "string",
+    "description": "Offsite pickup address line 1",
+    "fillRate": 1,
+    "premium": false
+  },
+  {
+    "name": "offsiteState",
+    "type": "string",
+    "description": "Offsite pickup state",
+    "fillRate": 1,
+    "premium": false
+  },
+  {
+    "name": "offsiteCity",
+    "type": "string",
+    "description": "Offsite pickup city",
+    "fillRate": 1,
+    "premium": false
+  },
+  {
+    "name": "offsiteZip",
+    "type": "string",
+    "description": "Offsite pickup ZIP code",
+    "fillRate": 1,
+    "premium": false
+  },
+  {
+    "name": "saleLight",
+    "type": "string",
+    "description": "Sale light indicator",
+    "fillRate": 2,
+    "premium": false
+  },
+  {
+    "name": "autoGrade",
+    "type": "float",
+    "description": "Auto grade rating (e.g., 3.0, 2.5)",
+    "fillRate": 2,
+    "premium": false
+  },
+  {
+    "name": "announcements",
+    "type": "string",
+    "description": "Auction announcements and special conditions",
+    "fillRate": 1,
+    "premium": false
+  },
+  {
+    "name": "listingUrl",
+    "type": "string",
+    "description": "Full URL to the Copart lot listing page",
+    "fillRate": 100,
+    "premium": true
+  }
+]

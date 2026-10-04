@@ -1,0 +1,54 @@
+{
+  "vehicle_profile": {
+    "make": "FORD",
+    "year": 2014,
+    "vehicle_age": 12,
+    "brand_tier": "standard",
+    "body_style": "truck",
+    "operable": false
+  },
+  "inspection_summary": {
+    "total_damage_instances": 1,
+    "total_damaged_area_pct": 4.35,
+    "global_severity_classifier": "moderate",
+    "max_dsi_score": 56.9,
+    "composite_severity": "moderate",
+    "primary_damaged_component": "hood",
+    "primary_impact_sector": "FRONT END"
+  },
+  "repair_cost_estimate": {
+    "estimated_cost_usd": 11437.98,
+    "confidence_interval_90_usd": {
+      "lower_bound": 5380.45,
+      "upper_bound": 22719.82,
+      "interval_width": 17339.37
+    },
+    "primary_cost_driver": "Standard brand with front end damage on hood"
+  },
+  "detected_damages": [
+    {
+      "damage_type": "dent",
+      "confidence": 0.924,
+      "bbox": [
+        269,
+        166,
+        509,
+        287
+      ],
+      "normalized_area_pct": 4.35,
+      "component": "hood",
+      "component_confidence": 0.469,
+      "copart_sector": "FRONT END",
+      "labor_parts_multiplier": 1.35,
+      "dsi_score": 56.9,
+      "severity_grade": "moderate"
+    }
+  ],
+  "pipeline_stages_verified": [
+    "Stage 1: YOLOv8n Damage Localization",
+    "Stage 2: EfficientNet-B0 Crop Classification",
+    "Stage 3: 10-Component Ontology & Spatial Geometry",
+    "Stage 4: Damage Severity Index (DSI) Formulation",
+    "Stage 5: HistGradientBoosting & Quantile Cost Regressors"
+  ]
+}

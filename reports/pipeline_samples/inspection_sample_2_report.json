@@ -1,0 +1,54 @@
+{
+  "vehicle_profile": {
+    "make": "TOYOTA",
+    "year": 2017,
+    "vehicle_age": 9,
+    "brand_tier": "standard",
+    "body_style": "suv",
+    "operable": true
+  },
+  "inspection_summary": {
+    "total_damage_instances": 1,
+    "total_damaged_area_pct": 6.74,
+    "global_severity_classifier": "minor",
+    "max_dsi_score": 44.7,
+    "composite_severity": "moderate",
+    "primary_damaged_component": "front_bumper",
+    "primary_impact_sector": "FRONT END"
+  },
+  "repair_cost_estimate": {
+    "estimated_cost_usd": 8700.99,
+    "confidence_interval_90_usd": {
+      "lower_bound": 4385.92,
+      "upper_bound": 15992.91,
+      "interval_width": 11606.99
+    },
+    "primary_cost_driver": "Standard brand with front end damage on front_bumper"
+  },
+  "detected_damages": [
+    {
+      "damage_type": "scratch",
+      "confidence": 0.881,
+      "bbox": [
+        331,
+        490,
+        736,
+        601
+      ],
+      "normalized_area_pct": 6.74,
+      "component": "front_bumper",
+      "component_confidence": 0.608,
+      "copart_sector": "FRONT END",
+      "labor_parts_multiplier": 1.15,
+      "dsi_score": 44.7,
+      "severity_grade": "moderate"
+    }
+  ],
+  "pipeline_stages_verified": [
+    "Stage 1: YOLOv8n Damage Localization",
+    "Stage 2: EfficientNet-B0 Crop Classification",
+    "Stage 3: 10-Component Ontology & Spatial Geometry",
+    "Stage 4: Damage Severity Index (DSI) Formulation",
+    "Stage 5: HistGradientBoosting & Quantile Cost Regressors"
+  ]
+}

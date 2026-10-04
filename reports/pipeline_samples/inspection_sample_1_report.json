@@ -1,0 +1,54 @@
+{
+  "vehicle_profile": {
+    "make": "BMW",
+    "year": 2022,
+    "vehicle_age": 4,
+    "brand_tier": "luxury",
+    "body_style": "sedan",
+    "operable": true
+  },
+  "inspection_summary": {
+    "total_damage_instances": 1,
+    "total_damaged_area_pct": 17.95,
+    "global_severity_classifier": "moderate",
+    "max_dsi_score": 78.3,
+    "composite_severity": "severe",
+    "primary_damaged_component": "wheel_tire",
+    "primary_impact_sector": "SIDE"
+  },
+  "repair_cost_estimate": {
+    "estimated_cost_usd": 19661.79,
+    "confidence_interval_90_usd": {
+      "lower_bound": 11432.35,
+      "upper_bound": 28298.99,
+      "interval_width": 16866.64
+    },
+    "primary_cost_driver": "Luxury brand with side damage on wheel_tire"
+  },
+  "detected_damages": [
+    {
+      "damage_type": "tire flat",
+      "confidence": 0.977,
+      "bbox": [
+        22,
+        211,
+        366,
+        559
+      ],
+      "normalized_area_pct": 17.95,
+      "component": "wheel_tire",
+      "component_confidence": 0.968,
+      "copart_sector": "SIDE",
+      "labor_parts_multiplier": 0.65,
+      "dsi_score": 78.3,
+      "severity_grade": "severe"
+    }
+  ],
+  "pipeline_stages_verified": [
+    "Stage 1: YOLOv8n Damage Localization",
+    "Stage 2: EfficientNet-B0 Crop Classification",
+    "Stage 3: 10-Component Ontology & Spatial Geometry",
+    "Stage 4: Damage Severity Index (DSI) Formulation",
+    "Stage 5: HistGradientBoosting & Quantile Cost Regressors"
+  ]
+}

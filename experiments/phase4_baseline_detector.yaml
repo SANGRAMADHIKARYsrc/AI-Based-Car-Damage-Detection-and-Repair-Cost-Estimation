@@ -1,0 +1,93 @@
+# Phase 4 — Baseline Damage Detector Experiment Configuration
+# YOLOv8n on CarDD 6-class detection dataset
+
+experiment:
+  name: "phase4_baseline_yolov8n"
+  phase: "4"
+  date: "2026-09-29"
+  researcher: "car-damage-ai"
+
+dataset:
+  name: "CarDD"
+  version: "1.0"
+  split: "train/val/test"
+  num_train: 2816
+  num_val: 810
+  num_test: 374
+  num_classes: 6
+  classes: ['dent', 'scratch', 'crack', 'glass shatter', 'lamp broken', 'tire flat']
+  class_weights: [0.5882, 0.4940, 0.9797, 1.1469, 1.1247, 1.6665]  # smoothed sqrt
+
+model:
+  architecture: "YOLOv8"
+  variant: "n"  # nano — 3.2M params, baseline
+  pretrained: true
+  weights: "yolov8n.pt"  # COCO pretrained
+
+training:
+  image_size: 640
+  batch_size: 16          # fits in 4GB VRAM for nano
+  epochs: 100
+  patience: 15            # early stopping patience
+  learning_rate: 0.01
+  optimizer: "auto"       # AdamW with cosine schedule
+  warmup_epochs: 3
+  close_mosaic: 10        # disable mosaic for last 10 epochs
+  random_seed: 42
+  amp: true               # mixed precision — critical for 4GB VRAM
+  workers: 2
+
+  # Augmentation (from Phase 3 augmentations.py)
+  augmentation:
+    hsv_h: 0.015
+    hsv_s: 0.7
+    hsv_v: 0.4
+    degrees: 10.0
+    translate: 0.1
+    scale: 0.5
+    shear: 2.0
+    perspective: 0.0005
+    fliplr: 0.5
+    flipud: 0.0
+    mosaic: 1.0
+    mixup: 0.15
+    copy_paste: 0.3
+    erasing: 0.2
+
+hardware:
+  gpu: "NVIDIA GeForce RTX 2050"
+  vram: "4096 MiB"
+  compute_capability: "8.6"
+  driver: "592.00"
+  os: "Windows"
+
+evaluation:
+  metrics:
+    - precision
+    - recall
+    - f1
+    - mAP50
+    - mAP50-95
+  per_class: true
+  confusion_matrix: true
+  inference_speed: true
+
+results:
+  precision_val: 0.7147
+  recall_val: 0.6890
+  f1_val: 0.7016
+  mAP50_val: 0.7168
+  mAP50_95_val: 0.5326
+  precision_test: 0.7012
+  recall_test: 0.6911
+  f1_test: 0.6961
+  mAP50_test: 0.6494
+  mAP50_95_test: 0.4925
+  inference_time_ms: 13.1
+  training_time_hours: 1.35
+  best_epoch: 100
+
+notes: >
+  Baseline experiment. YOLOv8n pretrained on COCO, fine-tuned on CarDD 6-class
+  damage detection. Uses smoothed sqrt class weights from Phase 3. Mixed precision
+  enabled for 4GB VRAM constraint. Early stopping patience=15.

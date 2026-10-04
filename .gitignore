@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and testing
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Large raw training image datasets and image crops (>5 GB)
+data/Datasets/train/
+data/Datasets/image/
+data/Datasets/val/
+data/Datasets/validation/
+data/processed/damage_crops/
+data/raw/
+
+# Temporary run artifacts
+*.log
+scratch/

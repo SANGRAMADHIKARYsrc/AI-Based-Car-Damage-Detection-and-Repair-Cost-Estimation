@@ -1,0 +1,351 @@
+[
+  {
+    "image": "000012.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          22,
+          211,
+          366,
+          559
+        ],
+        "detector_class": "tire flat",
+        "detector_conf": 0.922,
+        "classifier_class": "tire flat",
+        "classifier_conf": 0.977,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000015.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          331,
+          490,
+          736,
+          601
+        ],
+        "detector_class": "scratch",
+        "detector_conf": 0.611,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.881,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000023.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          269,
+          166,
+          509,
+          287
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.682,
+        "classifier_class": "dent",
+        "classifier_conf": 0.924,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000033.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          282,
+          237,
+          659,
+          537
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.721,
+        "classifier_class": "dent",
+        "classifier_conf": 0.936,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000040.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          401,
+          280,
+          676,
+          617
+        ],
+        "detector_class": "scratch",
+        "detector_conf": 0.847,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.905,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          760,
+          21,
+          1000,
+          427
+        ],
+        "detector_class": "lamp broken",
+        "detector_conf": 0.455,
+        "classifier_class": "lamp broken",
+        "classifier_conf": 0.8,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          387,
+          0,
+          812,
+          415
+        ],
+        "detector_class": "lamp broken",
+        "detector_conf": 0.429,
+        "classifier_class": "lamp broken",
+        "classifier_conf": 0.647,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000042.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          219,
+          114,
+          689,
+          259
+        ],
+        "detector_class": "glass shatter",
+        "detector_conf": 0.845,
+        "classifier_class": "glass shatter",
+        "classifier_conf": 0.972,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          179,
+          267,
+          340,
+          445
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.835,
+        "classifier_class": "dent",
+        "classifier_conf": 0.934,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          78,
+          240,
+          173,
+          387
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.806,
+        "classifier_class": "dent",
+        "classifier_conf": 0.922,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          208,
+          72,
+          540,
+          136
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.531,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.795,
+        "agreement": false
+      },
+      {
+        "bbox_xyxy": [
+          296,
+          270,
+          825,
+          407
+        ],
+        "detector_class": "scratch",
+        "detector_conf": 0.48,
+        "classifier_class": "lamp broken",
+        "classifier_conf": 0.698,
+        "agreement": false
+      },
+      {
+        "bbox_xyxy": [
+          73,
+          234,
+          159,
+          366
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.302,
+        "classifier_class": "dent",
+        "classifier_conf": 0.925,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000044.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          118,
+          409,
+          602,
+          569
+        ],
+        "detector_class": "scratch",
+        "detector_conf": 0.545,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.734,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          509,
+          208,
+          728,
+          370
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.368,
+        "classifier_class": "dent",
+        "classifier_conf": 0.526,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          157,
+          415,
+          454,
+          529
+        ],
+        "detector_class": "scratch",
+        "detector_conf": 0.356,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.872,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          889,
+          155,
+          999,
+          255
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.27,
+        "classifier_class": "dent",
+        "classifier_conf": 0.778,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000057.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          347,
+          4,
+          991,
+          559
+        ],
+        "detector_class": "tire flat",
+        "detector_conf": 0.931,
+        "classifier_class": "tire flat",
+        "classifier_conf": 0.968,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000082.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          321,
+          152,
+          894,
+          483
+        ],
+        "detector_class": "scratch",
+        "detector_conf": 0.809,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.901,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          429,
+          0,
+          870,
+          102
+        ],
+        "detector_class": "lamp broken",
+        "detector_conf": 0.309,
+        "classifier_class": "lamp broken",
+        "classifier_conf": 0.946,
+        "agreement": true
+      }
+    ]
+  },
+  {
+    "image": "000088.jpg",
+    "detections": [
+      {
+        "bbox_xyxy": [
+          142,
+          136,
+          526,
+          563
+        ],
+        "detector_class": "crack",
+        "detector_conf": 0.53,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.463,
+        "agreement": false
+      },
+      {
+        "bbox_xyxy": [
+          203,
+          609,
+          372,
+          750
+        ],
+        "detector_class": "dent",
+        "detector_conf": 0.298,
+        "classifier_class": "dent",
+        "classifier_conf": 0.918,
+        "agreement": true
+      },
+      {
+        "bbox_xyxy": [
+          90,
+          107,
+          519,
+          561
+        ],
+        "detector_class": "scratch",
+        "detector_conf": 0.257,
+        "classifier_class": "scratch",
+        "classifier_conf": 0.452,
+        "agreement": true
+      }
+    ]
+  }
+]

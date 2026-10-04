@@ -1,0 +1,87 @@
+{
+  "experiment": {
+    "name": "phase4_yolov8n_baseline",
+    "phase": 4,
+    "date": "2026-09-29T15:01:47.806804"
+  },
+  "system_info": {
+    "python_version": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+    "pytorch_version": "2.4.1+cu124",
+    "cuda_available": true,
+    "os": "Windows-10-10.0.26200-SP0",
+    "timestamp": "2026-09-29T13:41:04.227721",
+    "gpu_name": "NVIDIA GeForce RTX 2050",
+    "gpu_memory_mb": 4095,
+    "cuda_version": "12.4"
+  },
+  "dataset_stats": {
+    "train": {
+      "images": 2816,
+      "labels": 2816
+    },
+    "val": {
+      "images": 810,
+      "labels": 810
+    },
+    "test": {
+      "images": 374,
+      "labels": 374
+    }
+  },
+  "training_config": {
+    "data": "C:\\Users\\ASUS\\OneDrive\\Desktop\\Antigravity\\Capstone Project\\car-damage-ai\\data\\Datasets\\data.yaml",
+    "epochs": 100,
+    "imgsz": 640,
+    "batch": 16,
+    "patience": 15,
+    "seed": 42,
+    "optimizer": "auto",
+    "lr0": 0.01,
+    "lrf": 0.01,
+    "warmup_epochs": 3,
+    "cos_lr": true,
+    "amp": true,
+    "workers": 2,
+    "cache": false,
+    "close_mosaic": 10,
+    "hsv_h": 0.015,
+    "hsv_s": 0.7,
+    "hsv_v": 0.4,
+    "degrees": 10.0,
+    "translate": 0.1,
+    "scale": 0.5,
+    "shear": 2.0,
+    "perspective": 0.0005,
+    "fliplr": 0.5,
+    "flipud": 0.0,
+    "mosaic": 1.0,
+    "mixup": 0.15,
+    "copy_paste": 0.3,
+    "erasing": 0.2,
+    "project": "C:\\Users\\ASUS\\OneDrive\\Desktop\\Antigravity\\Capstone Project\\car-damage-ai\\models\\detection",
+    "name": "phase4_yolov8n_baseline",
+    "exist_ok": true,
+    "save": true,
+    "save_period": -1,
+    "plots": false,
+    "verbose": true
+  },
+  "class_weights": [
+    0.5882,
+    0.494,
+    0.9797,
+    1.1469,
+    1.1247,
+    1.6665
+  ],
+  "results": {
+    "precision": 0.7147064542923749,
+    "recall": 0.6890140214017023,
+    "mAP50": 0.7168401097718408,
+    "mAP50_95": 0.5325976167522225,
+    "training_time_hours": 1.35,
+    "best_epoch": -1,
+    "f1": 0.7016
+  },
+  "model_path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\Antigravity\\Capstone Project\\car-damage-ai\\models\\detection\\phase4_yolov8n_baseline\\weights\\best.pt"
+}

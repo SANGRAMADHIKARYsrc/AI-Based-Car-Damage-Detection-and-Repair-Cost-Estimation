@@ -1,0 +1,74 @@
+{
+  "experiment": {
+    "name": "phase5_damage_classifier_efficientnet_b0",
+    "phase": "5",
+    "date": "2026-10-04",
+    "researcher": "car-damage-ai"
+  },
+  "dataset": {
+    "name": "CarDD-Crops",
+    "version": "1.0",
+    "source": "data/Datasets",
+    "crop_dir": "data/processed/damage_crops",
+    "num_classes": 6,
+    "classes": [
+      "dent",
+      "scratch",
+      "crack",
+      "glass shatter",
+      "lamp broken",
+      "tire flat"
+    ],
+    "padding_ratio": 0.15,
+    "class_weights": [
+      0.5882,
+      0.494,
+      0.9797,
+      1.1469,
+      1.1247,
+      1.6665
+    ]
+  },
+  "model": {
+    "architecture": "EfficientNet-B0",
+    "backbone": "efficientnet_b0",
+    "pretrained": true,
+    "num_classes": 6,
+    "dropout_rate": 0.3,
+    "hidden_dim": 256,
+    "freeze_backbone": false
+  },
+  "training": {
+    "image_size": 224,
+    "batch_size": 32,
+    "epochs": 35,
+    "patience": 8,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "scheduler": "cosine_warmup",
+    "warmup_epochs": 3,
+    "loss_function": "weighted_cross_entropy",
+    "label_smoothing": 0.05,
+    "random_seed": 42,
+    "amp": true,
+    "workers": 2,
+    "total_epochs_trained": 25,
+    "training_time_sec": 2183.38
+  },
+  "system_info": {
+    "python_version": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+    "pytorch_version": "2.4.1+cu124",
+    "cuda_available": true,
+    "os": "Windows-10-10.0.26200-SP0",
+    "timestamp": "2026-10-04T23:10:04.151154",
+    "gpu_name": "NVIDIA GeForce RTX 2050",
+    "gpu_memory_mb": 4095,
+    "cuda_version": "12.4"
+  },
+  "best_metrics": {
+    "val_macro_f1": 0.9550653911881666,
+    "best_epoch": 23,
+    "best_val_acc": 0.9373202990224266
+  }
+}

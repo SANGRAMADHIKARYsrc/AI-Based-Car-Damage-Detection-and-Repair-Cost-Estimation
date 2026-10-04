@@ -1,0 +1,71 @@
+{
+  "dataset_evaluated": "VehiDE (Vietnamese traffic domain)",
+  "images_evaluated": 250,
+  "total_gt_damage_instances": 501,
+  "out_of_domain_metrics": {
+    "precision": 0.2713,
+    "recall": 0.2735,
+    "f1_score": 0.2724,
+    "estimated_mAP50": 0.2587
+  },
+  "in_domain_cardd_baseline": {
+    "precision": 0.651,
+    "recall": 0.448,
+    "f1_score": 0.531,
+    "mAP50": 0.508
+  },
+  "domain_transfer_analysis": {
+    "f1_transfer_retention_pct": 51.29,
+    "domain_drop_f1": 0.2586,
+    "primary_domain_shift_factors": [
+      "Lighting variance (outdoor tropical sun glare vs balanced studio shots)",
+      "Vehicle geometry distribution (motorcycles & small Asian micro-cars present in VehiDE background)",
+      "Labeling protocol differences (VehiDE uses loose multi-polygon hulls while CarDD uses tight rectangles)",
+      "Missing parts category in VehiDE (mat_bo_phan) having no direct counterpart in CarDD"
+    ]
+  },
+  "per_class_transfer": {
+    "dent": {
+      "gt_instances": 91,
+      "pred_instances": 88,
+      "precision": 0.2955,
+      "recall": 0.2857,
+      "f1_score": 0.2905
+    },
+    "scratch": {
+      "gt_instances": 284,
+      "pred_instances": 258,
+      "precision": 0.2829,
+      "recall": 0.257,
+      "f1_score": 0.2694
+    },
+    "crack": {
+      "gt_instances": 68,
+      "pred_instances": 44,
+      "precision": 0.1818,
+      "recall": 0.1176,
+      "f1_score": 0.1429
+    },
+    "glass shatter": {
+      "gt_instances": 33,
+      "pred_instances": 53,
+      "precision": 0.3962,
+      "recall": 0.6364,
+      "f1_score": 0.4884
+    },
+    "lamp broken": {
+      "gt_instances": 25,
+      "pred_instances": 48,
+      "precision": 0.1875,
+      "recall": 0.36,
+      "f1_score": 0.2466
+    },
+    "tire flat": {
+      "gt_instances": 0,
+      "pred_instances": 14,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    }
+  }
+}

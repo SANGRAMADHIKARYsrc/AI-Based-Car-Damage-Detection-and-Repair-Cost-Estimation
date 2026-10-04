@@ -1,0 +1,128 @@
+{
+  "model_architecture": "HistGradientBoostingRegressor",
+  "test_records": 2878,
+  "overall_metrics": {
+    "mae_dollar": 4701.78,
+    "median_ae_dollar": 3048.67,
+    "rmse_dollar": 7557.87,
+    "mape_pct": 57.77,
+    "r2_dollar": 0.4528,
+    "mae_log": 0.3928,
+    "rmse_log": 0.5521,
+    "r2_log": 0.4452
+  },
+  "prediction_intervals": {
+    "nominal_confidence_pct": 90.0,
+    "empirical_coverage_picp_pct": 86.62,
+    "mean_interval_width_mpiw_dollar": 18350.3,
+    "median_interval_width_dollar": 16398.86
+  },
+  "tiered_performance": {
+    "low_cost (< $5k)": {
+      "support": 417,
+      "mae_dollar": 3723.48,
+      "median_ae_dollar": 2967.71,
+      "mape_pct": 216.09
+    },
+    "mid_cost ($5k - $15k)": {
+      "support": 1497,
+      "mae_dollar": 2797.49,
+      "median_ae_dollar": 2098.82,
+      "mape_pct": 31.49
+    },
+    "high_cost ($15k - $30k)": {
+      "support": 776,
+      "mae_dollar": 5673.11,
+      "median_ae_dollar": 5045.03,
+      "mape_pct": 27.36
+    },
+    "severe_loss (>= $30k)": {
+      "support": 188,
+      "mae_dollar": 18025.75,
+      "median_ae_dollar": 15056.42,
+      "mape_pct": 41.32
+    }
+  },
+  "top_features": [
+    {
+      "feature": "vehicle_age",
+      "importance": 0.5875
+    },
+    {
+      "feature": "drivetrain_clean_FWD",
+      "importance": 0.0304
+    },
+    {
+      "feature": "drivetrain_clean_RWD",
+      "importance": 0.0226
+    },
+    {
+      "feature": "base_sector_severity",
+      "importance": 0.0223
+    },
+    {
+      "feature": "brand_tier_luxury",
+      "importance": 0.0167
+    },
+    {
+      "feature": "primary_damage_clean_MECHANICAL",
+      "importance": 0.0144
+    },
+    {
+      "feature": "primary_damage_clean_VANDALISM",
+      "importance": 0.0137
+    },
+    {
+      "feature": "is_operable",
+      "importance": 0.0112
+    },
+    {
+      "feature": "body_style_clean_truck",
+      "importance": 0.0082
+    },
+    {
+      "feature": "visual_primary_component_hood",
+      "importance": 0.0066
+    },
+    {
+      "feature": "visual_dsi",
+      "importance": 0.006
+    },
+    {
+      "feature": "body_style_clean_other",
+      "importance": 0.0059
+    },
+    {
+      "feature": "has_secondary_damage",
+      "importance": 0.0037
+    },
+    {
+      "feature": "primary_damage_clean_MINOR DENT/SCRATCHES",
+      "importance": 0.0035
+    },
+    {
+      "feature": "brand_tier_premium",
+      "importance": 0.0028
+    },
+    {
+      "feature": "drivetrain_clean_UNKNOWN",
+      "importance": 0.0026
+    },
+    {
+      "feature": "starts_only",
+      "importance": 0.0017
+    },
+    {
+      "feature": "primary_damage_clean_TOP/ROOF",
+      "importance": 0.0016
+    },
+    {
+      "feature": "primary_damage_clean_WATER/FLOOD",
+      "importance": 0.0007
+    },
+    {
+      "feature": "primary_damage_clean_SIDE",
+      "importance": 0.0007
+    }
+  ]
+}

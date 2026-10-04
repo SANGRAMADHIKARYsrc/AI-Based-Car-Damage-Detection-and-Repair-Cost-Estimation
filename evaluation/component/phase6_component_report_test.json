@@ -1,0 +1,102 @@
+{
+  "evaluation_split": "test",
+  "sample_count": 784,
+  "mean_confidence": 0.6047,
+  "mean_cost_multiplier": 1.1483,
+  "component_distribution": {
+    "door": 274,
+    "front_bumper": 135,
+    "hood": 71,
+    "windshield_glass": 71,
+    "lamp": 69,
+    "fender": 65,
+    "roof": 43,
+    "wheel_tire": 32,
+    "quarter_panel": 24
+  },
+  "copart_sector_distribution": {
+    "SIDE": 371,
+    "FRONT END": 275,
+    "MINOR DENT/SCRATCHES": 71,
+    "ROLLOVER": 43,
+    "REAR END": 24
+  },
+  "method_breakdown": {
+    "spatial_affinity_fusion": 612,
+    "deterministic_semantic": 172
+  },
+  "cross_tabulation": {
+    "crack": {
+      "front_bumper": 25,
+      "rear_bumper": 0,
+      "hood": 10,
+      "door": 15,
+      "fender": 12,
+      "quarter_panel": 3,
+      "roof": 4,
+      "windshield_glass": 0,
+      "lamp": 0,
+      "wheel_tire": 0
+    },
+    "dent": {
+      "front_bumper": 24,
+      "rear_bumper": 0,
+      "hood": 37,
+      "door": 120,
+      "fender": 24,
+      "quarter_panel": 8,
+      "roof": 23,
+      "windshield_glass": 0,
+      "lamp": 0,
+      "wheel_tire": 0
+    },
+    "glass shatter": {
+      "front_bumper": 0,
+      "rear_bumper": 0,
+      "hood": 0,
+      "door": 0,
+      "fender": 0,
+      "quarter_panel": 0,
+      "roof": 0,
+      "windshield_glass": 71,
+      "lamp": 0,
+      "wheel_tire": 0
+    },
+    "lamp broken": {
+      "front_bumper": 0,
+      "rear_bumper": 0,
+      "hood": 0,
+      "door": 0,
+      "fender": 0,
+      "quarter_panel": 0,
+      "roof": 0,
+      "windshield_glass": 0,
+      "lamp": 69,
+      "wheel_tire": 0
+    },
+    "scratch": {
+      "front_bumper": 86,
+      "rear_bumper": 0,
+      "hood": 24,
+      "door": 139,
+      "fender": 29,
+      "quarter_panel": 13,
+      "roof": 16,
+      "windshield_glass": 0,
+      "lamp": 0,
+      "wheel_tire": 0
+    },
+    "tire flat": {
+      "front_bumper": 0,
+      "rear_bumper": 0,
+      "hood": 0,
+      "door": 0,
+      "fender": 0,
+      "quarter_panel": 0,
+      "roof": 0,
+      "windshield_glass": 0,
+      "lamp": 0,
+      "wheel_tire": 32
+    }
+  }
+}

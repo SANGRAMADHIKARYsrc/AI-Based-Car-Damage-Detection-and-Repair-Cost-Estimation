@@ -1,0 +1,46 @@
+# Phase 6 — Vehicle Component Identification Configuration
+# Fuses semantic ontology, spatial-geometric priors, and damage affinity
+
+experiment:
+  name: "phase6_vehicle_component_identification"
+  phase: "6"
+  date: "2026-10-04"
+  researcher: "car-damage-ai"
+
+ontology:
+  num_components: 10
+  components:
+    - front_bumper
+    - rear_bumper
+    - hood
+    - door
+    - fender
+    - quarter_panel
+    - roof
+    - windshield_glass
+    - lamp
+    - wheel_tire
+
+methodology:
+  fusion_strategy: "hybrid_semantic_spatial_affinity"
+  spatial_prior:
+    distribution: "bivariate_gaussian_mixture"
+    aspect_ratio_penalty_weight: 0.15
+  affinity_weighting: true
+  confidence_calibration: true
+
+copart_mapping:
+  front_bumper: "FRONT END"
+  hood: "FRONT END"
+  lamp: "FRONT END"
+  rear_bumper: "REAR END"
+  quarter_panel: "REAR END"
+  door: "SIDE"
+  fender: "SIDE"
+  wheel_tire: "SIDE"
+  roof: "ROLLOVER"
+  windshield_glass: "MINOR DENT/SCRATCHES"
+
+targets:
+  mean_confidence_target: 0.75
+  spatial_plausibility_target: 0.90
