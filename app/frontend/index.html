@@ -3,622 +3,391 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CarDamage AI — Detect visible vehicle damage, assess severity, and receive a preliminary repair-cost estimate.">
+  <meta name="description" content="CarDamage AI — AI-powered vehicle damage detection, severity assessment, and preliminary repair-cost estimation.">
   <title>CarDamage AI — Vehicle Damage Assessment</title>
-
-  <!-- Typography: Inter (Design Guide §4) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="LOGO.png?v=2.2">
+  <link rel="stylesheet" href="style.css?v=2.2">
 </head>
-<body class="app-body">
+<body>
 
-  <!-- ═══════════════════════════════════════════════════════
-       HEADER — Guide §7: Simple nav, car icon, no robot/brain
-       ═══════════════════════════════════════════════════════ -->
+  <!-- ════════ HEADER ════════ -->
   <header class="app-header" role="banner">
-    <div class="header-container">
-      <div class="brand-cluster">
-        <a href="#inspect" class="brand-link" id="nav-brand" aria-label="CarDamage AI Home">
-          <svg class="brand-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.2a1 1 0 0 0-.8.4L1.7 11 .16 11.86A1 1 0 0 0 0 12.85V16h3"/>
-            <circle cx="6.5" cy="16.5" r="2.5"/>
-            <circle cx="16.5" cy="16.5" r="2.5"/>
-          </svg>
-          <span class="brand-text">CarDamage <span class="brand-accent">AI</span></span>
-        </a>
-        <span class="research-badge">Academic Research Prototype</span>
-      </div>
+    <div class="header-inner">
+      <a href="#inspect" class="brand" id="nav-brand" aria-label="CarDamage AI Home">
+        <img src="LOGO.png" alt="CarDamage AI" class="brand-logo" width="28" height="28">
+        <span>CarDamage <span class="accent">AI</span></span>
+      </a>
+      <span class="proto-badge">Academic Research Prototype</span>
 
-      <nav class="nav-links" role="navigation" aria-label="Main navigation">
-        <button type="button" class="nav-item active" data-view="inspect" id="nav-btn-inspect">Inspect</button>
-        <button type="button" class="nav-item" data-view="reports" id="nav-btn-reports">Reports</button>
-        <button type="button" class="nav-item" data-view="methodology" id="nav-btn-methodology">Methodology</button>
-        <button type="button" class="nav-item" data-view="about" id="nav-btn-about">About</button>
+      <nav class="nav" id="main-nav" role="navigation" aria-label="Main">
+        <button type="button" class="nav-btn active" data-view="inspect">Inspect</button>
+        <button type="button" class="nav-btn" data-view="reports">Reports</button>
+        <button type="button" class="nav-btn" data-view="methodology">Methodology</button>
+        <button type="button" class="nav-btn" data-view="about">About</button>
       </nav>
 
-      <div class="header-actions">
-        <button type="button" class="btn btn-primary btn-sm" id="btn-header-analyze">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right:6px" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          Analyze Vehicle
+      <div class="header-right">
+        <div class="currency-toggle" id="currency-toggle">
+          <button type="button" class="curr-btn active" data-currency="USD">$ USD</button>
+          <button type="button" class="curr-btn" data-currency="INR">₹ INR</button>
+        </div>
+        <button type="button" class="btn btn-accent btn-sm" id="btn-header-analyze">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Analyze vehicle
+        </button>
+        <button type="button" class="mobile-menu-btn" id="btn-mobile-menu" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════════════════════
-       MAIN CONTENT AREA
-       ═══════════════════════════════════════════════════════ -->
-  <main class="main-wrapper" role="main">
+  <!-- ════════ MAIN ════════ -->
+  <main class="main">
 
-    <!-- ════════════════════════════════════════════════════
-         VIEW 1: INSPECTION PAGE — Guide §11, §14
-         ════════════════════════════════════════════════════ -->
+    <!-- ════ VIEW: INSPECT ════ -->
     <div id="view-inspect" class="page-view active">
-      <section class="page-header">
-        <div>
-          <h1 class="page-title">Vehicle inspection</h1>
-          <p class="page-subtitle">Upload an image for analysis</p>
-        </div>
-      </section>
 
-      <!-- How It Works Strip — Guide §10 -->
-      <div class="steps-strip mb-6">
-        <div class="step-item">
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
-            </svg>
-          </div>
-          <div class="step-content">
-            <span class="step-num">01</span>
-            <span class="step-label">Upload</span>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step-item">
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </div>
-          <div class="step-content">
-            <span class="step-num">02</span>
-            <span class="step-label">Detect</span>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step-item">
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </div>
-          <div class="step-content">
-            <span class="step-num">03</span>
-            <span class="step-label">Assess</span>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step-item">
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-          </div>
-          <div class="step-content">
-            <span class="step-num">04</span>
-            <span class="step-label">Estimate</span>
-          </div>
-        </div>
+      <!-- Stepper — Upload → Detect → Assess → Estimate -->
+      <div class="stepper" id="workflow-stepper">
+        <div class="stepper-step completed" data-step="1"><span class="stepper-dot"></span><span class="stepper-label">Upload</span></div>
+        <div class="stepper-line"></div>
+        <div class="stepper-step" data-step="2"><span class="stepper-dot"></span><span class="stepper-label">Detect</span></div>
+        <div class="stepper-line"></div>
+        <div class="stepper-step" data-step="3"><span class="stepper-dot"></span><span class="stepper-label">Assess</span></div>
+        <div class="stepper-line"></div>
+        <div class="stepper-step" data-step="4"><span class="stepper-dot"></span><span class="stepper-label">Estimate</span></div>
       </div>
 
-      <!-- Two-Column Workspace — Guide §11 desktop layout -->
-      <div class="inspection-grid">
+      <!-- 3-Column Layout: Input 25% | Image 50% | Results 25% -->
+      <div class="inspection-layout">
 
-        <!-- LEFT COLUMN: Acquisition & Vehicle Profile -->
-        <section class="panel-column" aria-label="Inspection input">
+        <!-- ══ LEFT: Input Column (25%) ══ -->
+        <section class="inspection-input" aria-label="Inspection input">
 
           <!-- Benchmark Samples -->
-          <div class="card mb-4">
-            <div class="card-header">
-              <h2 class="card-title">Benchmark samples</h2>
-              <span class="card-caption">Click to load</span>
-            </div>
-            <div class="preset-group">
-              <button type="button" class="preset-pill active" data-sample="sample_1" id="btn-sample-1">
-                <span class="preset-name">BMW 3-Series</span>
-                <span class="preset-sub">Front collision · 2022</span>
+          <div class="card card-compact">
+            <h3 class="card-heading">Benchmark samples <span class="badge badge-info">Demo</span></h3>
+            <div class="sample-grid">
+              <button type="button" class="sample-btn active" data-sample="sample_1" id="btn-sample-1">
+                <span class="sample-name">BMW 3-Series</span>
+                <span class="sample-meta">Front collision · 2022</span>
               </button>
-              <button type="button" class="preset-pill" data-sample="sample_2" id="btn-sample-2">
-                <span class="preset-name">Toyota RAV4</span>
-                <span class="preset-sub">Bumper scratch · 2018</span>
+              <button type="button" class="sample-btn" data-sample="sample_2" id="btn-sample-2">
+                <span class="sample-name">Toyota RAV4</span>
+                <span class="sample-meta">Bumper scratch · 2018</span>
               </button>
-              <button type="button" class="preset-pill" data-sample="sample_3" id="btn-sample-3">
-                <span class="preset-name">Ford F-150</span>
-                <span class="preset-sub">Side panel dent · 2015</span>
+              <button type="button" class="sample-btn" data-sample="sample_3" id="btn-sample-3">
+                <span class="sample-name">Ford F-150</span>
+                <span class="sample-meta">Side dent · 2015</span>
               </button>
-              <button type="button" class="preset-pill" data-sample="sample_4" id="btn-sample-4">
-                <span class="preset-name">Honda Civic</span>
-                <span class="preset-sub">Severe crash · 2020</span>
+              <button type="button" class="sample-btn" data-sample="sample_4" id="btn-sample-4">
+                <span class="sample-name">Honda Civic</span>
+                <span class="sample-meta">Severe crash · 2020</span>
               </button>
             </div>
           </div>
 
-          <!-- Upload Dropzone — Guide §11 -->
-          <div class="card mb-4">
-            <div class="card-header">
-              <h2 class="card-title">Upload vehicle image</h2>
-            </div>
-            <div class="upload-zone" id="dropzone-area" role="button" tabindex="0" aria-label="Upload vehicle image">
-              <input type="file" id="image-file-input" accept="image/jpeg,image/png,image/jpg" class="file-hidden" aria-label="Choose vehicle image">
+          <!-- Upload -->
+          <div class="card card-compact">
+            <h3 class="card-heading">Upload vehicle photo</h3>
+            <div class="upload-zone" id="dropzone-area" role="button" tabindex="0" aria-label="Upload image">
+              <input type="file" id="image-file-input" accept="image/jpeg,image/png,image/jpg" class="sr-only">
               <div class="upload-prompt" id="upload-prompt-view">
-                <div class="upload-icon-wrapper">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="17 8 12 3 7 8"/>
-                    <line x1="12" y1="3" x2="12" y2="15"/>
-                  </svg>
-                </div>
-                <div class="upload-lead">Drop a vehicle image here</div>
-                <div class="upload-sub">or <span class="upload-browse">choose a file</span></div>
-                <div class="upload-meta">JPG, JPEG or PNG &middot; Maximum 10 MB</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span class="upload-lead">Drop image here</span>
+                <span class="upload-sub">or <span class="link-accent">browse</span></span>
+                <span class="upload-meta">JPG / PNG · Max 10 MB</span>
               </div>
-
-              <!-- File Preview Strip -->
               <div class="file-card hidden" id="file-preview-strip">
-                <img id="preview-thumbnail" src="" alt="Selected vehicle preview" class="file-thumb">
-                <div class="file-details">
-                  <span id="preview-filename" class="file-name">vehicle_photo.jpg</span>
-                  <span class="file-status">Image selected &amp; ready</span>
+                <img id="preview-thumbnail" src="" alt="Preview" class="file-thumb">
+                <div class="file-info">
+                  <span id="preview-filename" class="file-name">photo.jpg</span>
+                  <span class="file-status">Ready</span>
                 </div>
-                <button type="button" id="btn-remove-file" class="btn-icon" title="Remove image" aria-label="Remove selected image">&times;</button>
+                <button type="button" id="btn-remove-file" class="icon-btn" aria-label="Remove">&times;</button>
               </div>
             </div>
-            <p class="field-hint mt-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
-              </svg>
-              Image quality may affect results. Use a clear, well-lit photo with the damaged area visible.
-            </p>
           </div>
 
-          <!-- Vehicle Profile & Analysis — Guide §11 right panel -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Inspection details</h2>
-              <span class="card-caption">Optional</span>
-            </div>
-            <form id="vehicle-metadata-form" class="spec-form" aria-label="Vehicle specifications">
-              <!-- Vehicle Info Fields -->
-              <fieldset class="fieldset-clean">
-                <legend class="fieldset-legend">Vehicle information</legend>
-                <div class="form-row">
-                  <div class="form-group flex-1">
-                    <label for="input-make" class="form-label">Make / OEM</label>
-                    <select id="input-make" class="form-select">
-                      <option value="BMW" selected>BMW</option>
-                      <option value="MERCEDES-BENZ">Mercedes-Benz</option>
-                      <option value="AUDI">Audi</option>
-                      <option value="TOYOTA">Toyota</option>
-                      <option value="HONDA">Honda</option>
-                      <option value="FORD">Ford</option>
-                      <option value="CHEVROLET">Chevrolet</option>
-                      <option value="PORSCHE">Porsche</option>
-                      <option value="TESLA">Tesla</option>
-                      <option value="JEEP">Jeep</option>
-                    </select>
-                  </div>
-                  <div class="form-group flex-1">
-                    <label for="input-year" class="form-label">Model Year</label>
-                    <input type="number" id="input-year" class="form-input" min="1995" max="2026" value="2022">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group flex-1">
-                    <label for="input-bodystyle" class="form-label">Body Style</label>
-                    <select id="input-bodystyle" class="form-select">
-                      <option value="SEDAN" selected>Sedan</option>
-                      <option value="SUV">SUV</option>
-                      <option value="PICKUP">Pickup Truck</option>
-                      <option value="COUPE">Coupe</option>
-                      <option value="HATCHBACK">Hatchback</option>
-                      <option value="VAN">Van</option>
-                    </select>
-                  </div>
-                  <div class="form-group flex-1">
-                    <label for="input-drivetrain" class="form-label">Drivetrain</label>
-                    <select id="input-drivetrain" class="form-select">
-                      <option value="AWD" selected>All-Wheel Drive</option>
-                      <option value="FWD">Front-Wheel Drive</option>
-                      <option value="RWD">Rear-Wheel Drive</option>
-                      <option value="4WD">Four-Wheel Drive</option>
-                    </select>
-                  </div>
-                </div>
+          <!-- Vehicle Details (Collapsible) -->
+          <details class="card card-compact" id="vehicle-details-panel" open>
+            <summary class="card-heading card-toggle">Vehicle information <span class="badge badge-muted">Optional</span></summary>
+            <form id="vehicle-metadata-form" class="v-form" aria-label="Vehicle specifications">
+              <div class="form-row">
                 <div class="form-group">
-                  <label for="input-operability" class="form-label">Operability</label>
-                  <select id="input-operability" class="form-select">
-                    <option value="Run & Drive Verified" selected>Run & Drive Verified</option>
-                    <option value="Engine Starts">Engine Starts</option>
-                    <option value="DEFAULT">Non-Operational</option>
+                  <label for="input-make" class="form-label">Make</label>
+                  <select id="input-make" class="form-control">
+                    <option value="BMW" selected>BMW</option>
+                    <option value="MERCEDES-BENZ">Mercedes-Benz</option>
+                    <option value="AUDI">Audi</option>
+                    <option value="TOYOTA">Toyota</option>
+                    <option value="HONDA">Honda</option>
+                    <option value="FORD">Ford</option>
+                    <option value="CHEVROLET">Chevrolet</option>
+                    <option value="PORSCHE">Porsche</option>
+                    <option value="TESLA">Tesla</option>
+                    <option value="JEEP">Jeep</option>
                   </select>
                 </div>
-              </fieldset>
-
-              <!-- Analysis Checklist — Guide §11 -->
-              <div class="analysis-checklist">
-                <span class="checklist-title">Analysis</span>
-                <div class="checklist-items">
-                  <span class="check-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Damage detection</span>
-                  <span class="check-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Severity assessment</span>
-                  <span class="check-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Cost estimation</span>
+                <div class="form-group">
+                  <label for="input-year" class="form-label">Year</label>
+                  <input type="number" id="input-year" class="form-control" min="1995" max="2026" value="2022">
                 </div>
               </div>
-
-              <div class="form-actions mt-4">
-                <button type="submit" class="btn btn-primary btn-block" id="btn-run-inspection">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px" aria-hidden="true">
-                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                  </svg>
-                  Analyze vehicle
-                </button>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="input-bodystyle" class="form-label">Body</label>
+                  <select id="input-bodystyle" class="form-control">
+                    <option value="SEDAN" selected>Sedan</option><option value="SUV">SUV</option><option value="PICKUP">Pickup</option><option value="COUPE">Coupe</option><option value="HATCHBACK">Hatchback</option><option value="VAN">Van</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="input-drivetrain" class="form-label">Drivetrain</label>
+                  <select id="input-drivetrain" class="form-control">
+                    <option value="AWD" selected>AWD</option><option value="FWD">FWD</option><option value="RWD">RWD</option><option value="4WD">4WD</option>
+                  </select>
+                </div>
               </div>
+              <div class="form-group">
+                <label for="input-operability" class="form-label">Operability</label>
+                <select id="input-operability" class="form-control">
+                  <option value="Run & Drive Verified" selected>Run &amp; Drive</option>
+                  <option value="Engine Starts">Engine Starts</option>
+                  <option value="DEFAULT">Non-Operational</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-accent btn-block" id="btn-run-inspection">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Analyze vehicle
+              </button>
             </form>
-          </div>
+          </details>
         </section>
 
-        <!-- RIGHT COLUMN: Results -->
-        <section class="panel-column" aria-label="Inspection results">
-
-          <!-- Loading State — Guide §13 real stages -->
-          <div id="loading-overlay" class="card loading-card hidden">
-            <div class="loading-spinner" role="status" aria-label="Analysis in progress"></div>
-            <div class="loading-state-text" id="loading-step-text">Uploading image...</div>
-            <div class="loading-stages" id="loading-stages">
-              <div class="load-stage" data-stage="1"><span class="stage-dot"></span>Uploading image</div>
-              <div class="load-stage" data-stage="2"><span class="stage-dot"></span>Preparing image</div>
-              <div class="load-stage" data-stage="3"><span class="stage-dot"></span>Detecting visible damage</div>
-              <div class="load-stage" data-stage="4"><span class="stage-dot"></span>Assessing severity</div>
-              <div class="load-stage" data-stage="5"><span class="stage-dot"></span>Estimating repair cost</div>
-              <div class="load-stage" data-stage="6"><span class="stage-dot"></span>Preparing report</div>
+        <!-- ══ CENTER: Inspection Image (50%) ══ -->
+        <section class="inspection-viewer" aria-label="Inspection image">
+          <!-- Loading Overlay -->
+          <div id="loading-overlay" class="viewer-overlay hidden">
+            <div class="loader-ring"></div>
+            <span class="loader-text" id="loading-step-text">Preparing image...</span>
+            <div class="loader-stages" id="loading-stages">
+              <div class="stage" data-stage="1"><span class="stage-dot"></span>Preparing image</div>
+              <div class="stage" data-stage="2"><span class="stage-dot"></span>Detecting visible damage</div>
+              <div class="stage" data-stage="3"><span class="stage-dot"></span>Assessing severity</div>
+              <div class="stage" data-stage="4"><span class="stage-dot"></span>Estimating repair cost</div>
+              <div class="stage" data-stage="5"><span class="stage-dot"></span>Generating report</div>
             </div>
           </div>
 
           <!-- Empty State -->
-          <div id="empty-state-view" class="card empty-card">
-            <div class="empty-icon-wrap">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
+          <div id="empty-state" class="viewer-empty">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             <h2 class="empty-title">Ready for inspection</h2>
-            <p class="empty-desc">Select a benchmark sample or upload a vehicle image to begin automated damage detection and cost estimation.</p>
+            <p class="empty-desc">Select a benchmark sample or upload a vehicle image to begin.</p>
           </div>
 
-          <!-- Results — Guide §14 -->
-          <div id="results-display-view" class="hidden">
+          <!-- Image Container -->
+          <div id="image-container" class="inspection-image-container hidden">
+            <div class="viewer-toolbar">
+              <div class="seg-control">
+                <button type="button" class="seg-btn active" id="tab-annotated">Annotated</button>
+                <button type="button" class="seg-btn" id="tab-original">Original</button>
+              </div>
+            </div>
+            <img id="inspection-image" src="" alt="Vehicle inspection image" class="inspection-img">
+          </div>
+        </section>
 
-            <!-- Result Header -->
-            <div class="card mb-4">
-              <div class="result-header-row">
-                <div>
-                  <div class="result-badge-row">
-                    <span class="meta-label">Inspection result</span>
-                    <span class="report-id-chip" id="res-inspection-id">INS-2026-0001</span>
-                    <span class="status-chip success">Completed</span>
-                  </div>
-                  <div class="meta-timestamp" id="res-timestamp">05 Oct 2026 &middot; Preliminary Assessment</div>
+        <!-- ══ RIGHT: Results Column (25%) ══ -->
+        <section class="inspection-results" aria-label="Inspection results">
+          <div id="results-panel" class="hidden">
+
+            <!-- Status Chip -->
+            <div class="result-status-bar">
+              <span class="status-chip chip-success">Completed</span>
+              <span class="result-date" id="res-date">—</span>
+            </div>
+
+            <!-- Vehicle Title -->
+            <h2 class="result-vehicle" id="res-vehicle-title">Vehicle Assessment</h2>
+            <div class="result-id" id="res-inspection-id">—</div>
+
+            <!-- Estimate Card -->
+            <div class="card result-card">
+              <div class="result-card-header">
+                <span class="result-card-label">Estimated repair cost</span>
+                <div class="currency-toggle currency-toggle-sm" id="result-currency-toggle">
+                  <button type="button" class="curr-btn active" data-currency="USD">$</button>
+                  <button type="button" class="curr-btn" data-currency="INR">₹</button>
                 </div>
-                <div class="result-actions">
-                  <button type="button" class="btn btn-secondary btn-sm" id="btn-download-json">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    Export JSON
-                  </button>
-                  <button type="button" class="btn btn-secondary btn-sm" id="btn-download-image">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Save Image
-                  </button>
-                </div>
+              </div>
+              <div class="cost-value" id="res-cost-val">&mdash;</div>
+              <div class="cost-meta">
+                <span class="cost-tag">Preliminary estimate</span>
+              </div>
+              <div class="cost-ci" id="res-ci-range">—</div>
+            </div>
+
+            <!-- Severity Card -->
+            <div class="card result-card">
+              <span class="result-card-label">Damage severity</span>
+              <div class="severity-row">
+                <span class="severity-pill pill-moderate" id="res-severity-pill">MODERATE</span>
+              </div>
+              <div class="severity-meta" id="res-footprint">—</div>
+              <div class="dsi-row">
+                <span class="dsi-label">DSI:</span>
+                <span class="dsi-value" id="res-dsi-val">0.42</span>
+                <span class="dsi-scale">/ 1.00</span>
               </div>
             </div>
 
-            <!-- Metric Cards — Guide §19 Cost + §17 Severity -->
-            <div class="metrics-grid mb-4">
-              <!-- Repair Cost Card -->
-              <div class="card metric-card">
-                <div class="metric-card-top">
-                  <div class="metric-caption">Estimated repair range</div>
-                  <div class="currency-toggle" id="currency-toggle-group">
-                    <button type="button" class="curr-btn active" data-currency="USD">$ USD</button>
-                    <button type="button" class="curr-btn" data-currency="INR">₹ INR</button>
-                  </div>
-                </div>
-                <div class="cost-headline" id="res-cost-val">&mdash;</div>
-                <div class="metric-sub" id="res-ci-range">90% Confidence Interval: &mdash;</div>
-                <div class="metric-status-tag">Preliminary estimate</div>
+            <!-- Damage Count + List -->
+            <div class="card result-card">
+              <div class="result-card-header">
+                <span class="result-card-label">Detected damage</span>
+                <span class="damage-count-badge" id="res-damage-count">0</span>
               </div>
-
-              <!-- Severity Card -->
-              <div class="card metric-card">
-                <div class="metric-caption mb-2">Damage Severity Index</div>
-                <div class="dsi-display">
-                  <span class="dsi-number" id="res-dsi-val">0.00</span>
-                  <span class="dsi-scale">/ 1.00</span>
-                </div>
-                <div class="severity-pill-row">
-                  <span id="res-dsi-grade" class="severity-pill pill-moderate">Moderate</span>
-                  <span class="meta-text" id="res-footprint-val">0.0% surface</span>
-                </div>
+              <div class="damage-list" id="damage-list-container">
+                <!-- Dynamic -->
               </div>
             </div>
 
-            <!-- Annotated Image — Guide §15 -->
-            <div class="card mb-4">
-              <div class="card-header border-b">
-                <div>
-                  <h2 class="card-title">Annotated inspection image</h2>
-                  <span class="card-caption">Damage regions localized by model</span>
-                </div>
-                <div class="segmented-control">
-                  <button type="button" class="seg-btn active" id="tab-annotated-view">Annotated</button>
-                  <button type="button" class="seg-btn" id="tab-original-view">Original</button>
-                </div>
+            <!-- Actions -->
+            <div class="result-actions">
+              <button type="button" class="btn btn-accent btn-sm btn-block" id="btn-download-report">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download report
+              </button>
+              <div class="action-row">
+                <button type="button" class="btn btn-ghost btn-sm" id="btn-download-json">Export JSON</button>
+                <button type="button" class="btn btn-ghost btn-sm" id="btn-download-image">Save image</button>
               </div>
-              <div class="viewer-container">
-                <img id="inspection-image-display" src="" alt="Vehicle inspection — annotated damage regions" class="viewer-image">
-              </div>
+              <button type="button" class="btn btn-ghost btn-sm btn-block" id="btn-new-analysis">Analyze another vehicle</button>
             </div>
 
-            <!-- Damage Summary Table — Guide §16 -->
-            <div class="card mb-4">
-              <div class="card-header border-b">
-                <div>
-                  <h2 class="card-title">Detected damage</h2>
-                  <span class="card-caption" id="bom-count-label">0 damage areas</span>
-                </div>
-              </div>
-              <div class="table-responsive">
-                <table class="data-table" aria-label="Detected damage items">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Component</th>
-                      <th>Damage Type</th>
-                      <th>Severity</th>
-                      <th>Confidence</th>
-                    </tr>
-                  </thead>
-                  <tbody id="damages-table-body">
-                  </tbody>
-                </table>
-              </div>
+            <!-- Disclaimer -->
+            <div class="disclaimer-strip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>Preliminary AI assessment. Hidden damage, parts, labour, and location affect actual cost.</span>
             </div>
+          </div>
 
-            <!-- Cost Transparency — Guide §20, §21 -->
-            <div class="card disclaimer-card">
-              <div class="transparency-block mb-3">
-                <h3 class="transparency-title">How is this estimate generated?</h3>
-                <p class="transparency-body">
-                  The estimate uses detected damage characteristics (component type, damage severity, damaged surface footprint) combined with vehicle specifications (OEM tier, body style, drivetrain) evaluated by a Gradient Boosted Regressor. It is intended for preliminary assessment and may differ from an actual workshop quotation.
-                </p>
-              </div>
-              <div class="disclaimer-block">
-                <svg class="disclaimer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                  <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-                </svg>
-                <div class="disclaimer-text">
-                  <strong>Preliminary estimate:</strong> Actual repair cost may vary depending on hidden damage, vehicle model, parts availability, labour rates, workshop, and location.
-                </div>
-              </div>
-            </div>
+          <!-- Results Empty (shown before analysis completes) -->
+          <div id="results-empty" class="results-placeholder">
+            <p class="muted">Results will appear here after analysis.</p>
           </div>
         </section>
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
-         VIEW 2: REPORTS — Guide §23
-         ════════════════════════════════════════════════════ -->
+    <!-- ════ VIEW: REPORTS ════ -->
     <div id="view-reports" class="page-view hidden">
-      <section class="page-header">
-        <div>
+      <div class="page-content">
+        <div class="page-head">
           <h1 class="page-title">Inspection reports</h1>
-          <p class="page-subtitle">Recent automated damage assessments and cost estimations.</p>
+          <p class="page-sub">Recent automated damage assessments.</p>
         </div>
-      </section>
-
-      <div class="card" id="reports-container">
-        <div class="table-responsive">
-          <table class="data-table" aria-label="Inspection report history">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Inspection ID</th>
-                <th>Vehicle</th>
-                <th>Damage Areas</th>
-                <th>Severity</th>
-                <th>Estimate</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="reports-table-body">
-              <!-- Populated dynamically -->
-            </tbody>
-          </table>
-        </div>
-        <div class="empty-reports hidden" id="empty-reports">
-          <p class="text-muted">No inspections recorded yet. Analyze a vehicle to generate your first report.</p>
+        <div class="card">
+          <div class="table-wrap">
+            <table class="data-table" aria-label="Reports">
+              <thead><tr><th>Date</th><th>Vehicle</th><th>Damage</th><th>Severity</th><th>Estimate</th><th></th></tr></thead>
+              <tbody id="reports-table-body"></tbody>
+            </table>
+          </div>
+          <div class="mobile-reports" id="mobile-reports-stack"></div>
+          <div class="empty-state-small hidden" id="empty-reports">
+            <p class="muted">No inspections recorded. Analyze a vehicle to generate a report.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
-         VIEW 3: METHODOLOGY — Guide §26, §27
-         ════════════════════════════════════════════════════ -->
+    <!-- ════ VIEW: METHODOLOGY ════ -->
     <div id="view-methodology" class="page-view hidden">
-      <section class="page-header">
-        <div>
+      <div class="page-content">
+        <div class="page-head">
           <h1 class="page-title">Research methodology</h1>
-          <p class="page-subtitle">End-to-end multimodal deep learning pipeline architecture.</p>
+          <p class="page-sub">End-to-end multimodal deep learning pipeline.</p>
         </div>
-      </section>
 
-      <!-- Pipeline Diagram — Guide §26 -->
-      <div class="card mb-4">
-        <h2 class="card-title mb-3">Inspection Pipeline</h2>
-        <div class="pipeline-flow">
-          <div class="flow-step"><span class="step-num">01</span><span class="step-name">Vehicle image</span><span class="step-desc">Input ingestion & preprocessing</span></div>
-          <div class="flow-arrow">&rarr;</div>
-          <div class="flow-step"><span class="step-num">02</span><span class="step-name">Damage detection</span><span class="step-desc">YOLOv8n bounding box localization</span></div>
-          <div class="flow-arrow">&rarr;</div>
-          <div class="flow-step"><span class="step-num">03</span><span class="step-name">Classification</span><span class="step-desc">EfficientNet-B0 crop severity</span></div>
-          <div class="flow-arrow">&rarr;</div>
-          <div class="flow-step"><span class="step-num">04</span><span class="step-name">Component mapping</span><span class="step-desc">10-part vehicle ontology</span></div>
-          <div class="flow-arrow">&rarr;</div>
-          <div class="flow-step"><span class="step-num">05</span><span class="step-name">Cost estimation</span><span class="step-desc">HistGBR quantile regression</span></div>
-          <div class="flow-arrow">&rarr;</div>
-          <div class="flow-step"><span class="step-num">06</span><span class="step-name">Report</span><span class="step-desc">Structured inspection output</span></div>
-        </div>
-      </div>
-
-      <!-- Metrics Tables — Guide §27 -->
-      <div class="metrics-grid mb-4">
+        <!-- Pipeline Flow -->
         <div class="card">
-          <h2 class="card-title mb-3">Detection Model</h2>
-          <table class="data-table">
-            <tbody>
-              <tr><td>Architecture</td><td class="font-mono">YOLOv8 Nano</td></tr>
-              <tr><td>Framework</td><td class="font-mono">PyTorch / Ultralytics</td></tr>
-              <tr><td>Input resolution</td><td class="font-mono">640 &times; 640 px</td></tr>
-              <tr><td>Damage ontology</td><td class="font-mono">Dent, Scratch, Crack, Glass shatter, Deformation</td></tr>
-              <tr><td>Severity classifier</td><td class="font-mono">EfficientNet-B0 (3-class)</td></tr>
-              <tr><td>Automated tests</td><td class="font-mono font-bold text-success">10 / 10 passing</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="card">
-          <h2 class="card-title mb-3">Cost Model</h2>
-          <table class="data-table">
-            <tbody>
-              <tr><td>Regressor</td><td class="font-mono">HistGradientBoostingRegressor</td></tr>
-              <tr><td>Confidence interval</td><td class="font-mono">Quantile loss (&alpha;=0.05, 0.50, 0.95)</td></tr>
-              <tr><td>Damage features</td><td class="font-mono">DSI, bbox area ratio, severity weights</td></tr>
-              <tr><td>Vehicle features</td><td class="font-mono">OEM tier, age, operability, drivetrain</td></tr>
-              <tr><td>Training data</td><td class="font-mono">Copart salvage auction dataset (USD)</td></tr>
-              <tr><td>Currency output</td><td class="font-mono">USD ($) with INR (₹) conversion</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Dataset & Limitations — Guide §48, §49 -->
-      <div class="card mb-4">
-        <h2 class="card-title mb-3">Dataset Sources &amp; Limitations</h2>
-        <div class="limitations-grid">
-          <div class="limitation-block">
-            <h3 class="limit-heading">Dataset</h3>
-            <ul class="limit-list">
-              <li>Detection: Annotated vehicle damage images with bounding box labels</li>
-              <li>Cost model: Copart salvage vehicle auction records (historical US market data)</li>
-              <li>Severity: 3-class labeled crop patches (minor / moderate / severe)</li>
-            </ul>
-          </div>
-          <div class="limitation-block">
-            <h3 class="limit-heading">Known limitations</h3>
-            <ul class="limit-list">
-              <li>System evaluates visible external damage only</li>
-              <li>Hidden structural or mechanical damage cannot be detected</li>
-              <li>Single-image input may not capture full extent of damage</li>
-              <li>Repair cost varies by region, parts availability, and labour rates</li>
-              <li>Model performance depends on training data quality and image clarity</li>
-              <li>Output is an estimate, not a professional quotation</li>
-            </ul>
+          <h2 class="card-heading">5-Stage Pipeline Architecture</h2>
+          <div class="pipeline-flow">
+            <div class="pipe-step"><span class="pipe-num">01</span><span class="pipe-name">Input Image</span><span class="pipe-desc">RGB Ingestion</span></div>
+            <div class="pipe-arrow">&rarr;</div>
+            <div class="pipe-step"><span class="pipe-num">02</span><span class="pipe-name">Damage Detection</span><span class="pipe-desc">YOLOv8n</span></div>
+            <div class="pipe-arrow">&rarr;</div>
+            <div class="pipe-step"><span class="pipe-num">03</span><span class="pipe-name">Classification</span><span class="pipe-desc">EfficientNet-B0</span></div>
+            <div class="pipe-arrow">&rarr;</div>
+            <div class="pipe-step"><span class="pipe-num">04</span><span class="pipe-name">Component Map</span><span class="pipe-desc">Spatial Ontology</span></div>
+            <div class="pipe-arrow">&rarr;</div>
+            <div class="pipe-step"><span class="pipe-num">05</span><span class="pipe-name">Cost Estimator</span><span class="pipe-desc">HistGBR Quantiles</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="card disclaimer-card">
-        <h3 class="transparency-title">Research transparency</h3>
-        <p class="transparency-body">
-          This is an academic research prototype. Metrics shown are from development evaluation and may not generalize to all vehicle types. The system is not certified for insurance or legal use.
-        </p>
+        <!-- Model Specs -->
+        <div class="card-row">
+          <div class="card"><h3 class="card-heading">Detection</h3><table class="data-table"><tbody>
+            <tr><td>Architecture</td><td class="mono">YOLOv8 Nano (3.2M params)</td></tr>
+            <tr><td>Damage Classes</td><td class="mono">Dent, Scratch, Crack, Tear, Shatter</td></tr>
+            <tr><td>mAP@50</td><td class="mono accent">0.741</td></tr>
+            <tr><td>Severity Classifier</td><td class="mono">EfficientNet-B0 (3-class)</td></tr>
+          </tbody></table></div>
+          <div class="card"><h3 class="card-heading">Cost Model</h3><table class="data-table"><tbody>
+            <tr><td>Regressor</td><td class="mono">HistGradientBoosting</td></tr>
+            <tr><td>Quantile Loss</td><td class="mono">α = 0.05, 0.50, 0.95</td></tr>
+            <tr><td>Training Data</td><td class="mono">Copart 28k claims (USD)</td></tr>
+            <tr><td>Output</td><td class="mono">Dual USD / INR interval</td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="card disclaimer-card">
+          <p class="muted">Academic research prototype. Metrics from development evaluation. Not certified for insurance or legal use.</p>
+        </div>
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
-         VIEW 4: ABOUT — Guide §28
-         ════════════════════════════════════════════════════ -->
+    <!-- ════ VIEW: ABOUT ════ -->
     <div id="view-about" class="page-view hidden">
-      <section class="page-header">
-        <div>
-          <h1 class="page-title">About the project</h1>
-          <p class="page-subtitle">Academic capstone research in applied deep learning and computer vision.</p>
+      <div class="page-content">
+        <div class="page-head">
+          <h1 class="page-title">About CarDamage AI</h1>
+          <p class="page-sub">Academic capstone research in applied deep learning.</p>
         </div>
-      </section>
-
-      <div class="card mb-4">
-        <h2 class="about-heading">CarDamage AI</h2>
-        <p class="about-tagline">AI-Based Car Damage Detection and Repair Cost Estimation</p>
-        <p class="about-text">
-          An applied AI system that performs automated vehicle damage detection, semantic damage classification, component-level spatial reasoning, and preliminary repair-cost estimation using multimodal deep learning.
-        </p>
-
-        <div class="about-meta-list">
-          <div class="about-meta-item">
-            <span class="meta-label">Project type</span>
-            <span class="meta-val">Academic Research Project</span>
-          </div>
-          <div class="about-meta-item">
-            <span class="meta-label">Programme</span>
-            <span class="meta-val">B.Tech CSE / AI-ML &middot; 7th Semester</span>
-          </div>
-          <div class="about-meta-item">
-            <span class="meta-label">Domain</span>
-            <span class="meta-val">Computer Vision &middot; Deep Learning &middot; Machine Learning</span>
-          </div>
-          <div class="about-meta-item">
-            <span class="meta-label">Backend</span>
-            <span class="meta-val font-mono">FastAPI &middot; Uvicorn &middot; Python</span>
-          </div>
-          <div class="about-meta-item">
-            <span class="meta-label">Vision stack</span>
-            <span class="meta-val font-mono">YOLOv8 &middot; EfficientNet &middot; PyTorch &middot; OpenCV</span>
-          </div>
-          <div class="about-meta-item">
-            <span class="meta-label">Cost model</span>
-            <span class="meta-val font-mono">scikit-learn &middot; HistGradientBoosting</span>
+        <div class="card">
+          <p class="about-tagline accent">AI-Based Car Damage Detection and Repair Cost Estimation</p>
+          <p class="about-text">An academic research prototype exploring computer vision and machine learning for automated vehicle damage assessment and preliminary repair-cost estimation using a transparent 5-stage multimodal pipeline.</p>
+          <div class="about-meta">
+            <div><span class="meta-lbl">Students</span><span class="meta-val">Sangram Adhikary · Shivam Rajput</span></div>
+            <div><span class="meta-lbl">Guide</span><span class="meta-val">Mr. Kunal Goswami</span></div>
+            <div><span class="meta-lbl">Stack</span><span class="meta-val mono">FastAPI · YOLOv8 · PyTorch · scikit-learn</span></div>
+            <div><span class="meta-lbl">Year</span><span class="meta-val">2026</span></div>
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════
-       FOOTER — Guide §29
-       ═══════════════════════════════════════════════════════ -->
-  <footer class="app-footer" role="contentinfo">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <span class="footer-title">CarDamage AI</span>
-        <span class="footer-sub">AI-powered vehicle damage assessment</span>
-      </div>
-      <nav class="footer-links" aria-label="Footer navigation">
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <span class="footer-brand"><img src="LOGO.png" alt="" class="footer-logo" width="18" height="18"> CarDamage <span class="accent">AI</span></span>
+      <nav class="footer-nav" aria-label="Footer">
         <a href="#inspect" class="footer-link" onclick="appSwitchView('inspect')">Inspect</a>
         <a href="#reports" class="footer-link" onclick="appSwitchView('reports')">Reports</a>
         <a href="#methodology" class="footer-link" onclick="appSwitchView('methodology')">Methodology</a>
         <a href="#about" class="footer-link" onclick="appSwitchView('about')">About</a>
       </nav>
-      <div class="footer-copy">Academic research project &copy; 2026</div>
+      <span class="footer-copy muted">Academic research project © 2026</span>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2.2"></script>
 </body>
 </html>
