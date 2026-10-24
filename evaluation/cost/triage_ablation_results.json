@@ -1,0 +1,65 @@
+{
+  "test_sample_count": 2878,
+  "configurations": {
+    "1. Dummy Baseline (Median)": {
+      "mae_dollar": 6983.85,
+      "median_ae_dollar": 5090.45,
+      "rmse_dollar": 10560.66,
+      "mape_pct": 88.3,
+      "r2_dollar": -0.0684,
+      "mae_log": 0.5762,
+      "rmse_log": 0.7418,
+      "r2_log": -0.0016,
+      "feature_count": 0
+    },
+    "2. Pure Vehicle Metadata Only (No Triage, No Visual)": {
+      "mae_dollar": 4997.44,
+      "median_ae_dollar": 3174.21,
+      "rmse_dollar": 8061.57,
+      "mape_pct": 62.73,
+      "r2_dollar": 0.3774,
+      "mae_log": 0.4137,
+      "rmse_log": 0.5834,
+      "r2_log": 0.3804,
+      "feature_count": 19
+    },
+    "3. Adjuster Triage Only (No Vehicle Metadata)": {
+      "mae_dollar": 6748.49,
+      "median_ae_dollar": 4831.39,
+      "rmse_dollar": 10196.47,
+      "mape_pct": 82.32,
+      "r2_dollar": 0.004,
+      "mae_log": 0.5559,
+      "rmse_log": 0.7147,
+      "r2_log": 0.0702,
+      "feature_count": 28
+    },
+    "4. Vehicle Metadata + Adjuster Triage (No Visual)": {
+      "mae_dollar": 4683.78,
+      "median_ae_dollar": 3027.48,
+      "rmse_dollar": 7509.99,
+      "mape_pct": 57.65,
+      "r2_dollar": 0.4597,
+      "mae_log": 0.3914,
+      "rmse_log": 0.551,
+      "r2_log": 0.4474,
+      "feature_count": 47
+    },
+    "5. Full Model (Metadata + Triage + Visual Proxy)": {
+      "mae_dollar": 4695.99,
+      "median_ae_dollar": 3025.78,
+      "rmse_dollar": 7542.03,
+      "mape_pct": 57.9,
+      "r2_dollar": 0.4551,
+      "mae_log": 0.3928,
+      "rmse_log": 0.5524,
+      "r2_log": 0.4446,
+      "feature_count": 57
+    }
+  },
+  "adjuster_triage_contribution": {
+    "r2_delta_when_adding_triage_to_metadata": 0.0823,
+    "mae_reduction_dollar_when_adding_triage_to_metadata": 313.66,
+    "interpretation": "Dropping adjuster triage features (damageDescription, sector_cost_weight, runsDrives) causes test R\u00b2 to drop from 0.4597 to 0.3774 and test MAE to worsen by $313.66."
+  }
+}

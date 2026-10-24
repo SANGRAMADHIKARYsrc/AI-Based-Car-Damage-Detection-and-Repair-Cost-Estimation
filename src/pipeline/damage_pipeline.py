@@ -163,6 +163,7 @@ class CarDamageAIPipeline:
                 damage_class=damage_type,
                 norm_bbox=(xc_norm, yc_norm, bw_norm, bh_norm),
                 detector_conf=conf,
+                image=img_bgr,
             )
 
             comp_name = comp_info["primary_component"]
@@ -299,7 +300,7 @@ class CarDamageAIPipeline:
 
         stats_text = (
             f"Damages: {len(damages)} | DSI: {cost_res['visual_summary']['dsi_score']} ({cost_res['visual_summary']['severity_grade'].upper()}) | "
-            f"EST. REPAIR COST: ${cost_val:,.2f} [90% CI: ${ci_low:,.0f} - ${ci_high:,.0f}]"
+            f"EST. REPAIR COST: ${cost_val:,.2f} [90% PI: ${ci_low:,.0f} - ${ci_high:,.0f}]"
         )
         cv2.putText(banner, stats_text, (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.60, (0, 230, 255), 2)
 

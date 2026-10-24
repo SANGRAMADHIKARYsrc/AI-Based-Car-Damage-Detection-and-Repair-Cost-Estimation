@@ -8,6 +8,7 @@ Outputs standardized vehicle components and Copart loss sector tags.
 """
 
 from typing import Dict, List, Optional, Tuple, Union
+import cv2
 import numpy as np
 
 from .ontology import (
@@ -29,7 +30,7 @@ class VehicleComponentIdentifier:
         self.damage_affinity: Dict[str, Dict[str, float]] = {
             "dent": {
                 "front_bumper": 1.25,
-                "rear_bumper": 1.20,
+                "rear_bumper": 1.30,
                 "hood": 1.30,
                 "door": 1.40,
                 "fender": 1.25,
@@ -42,7 +43,7 @@ class VehicleComponentIdentifier:
             "scratch": {
                 "door": 1.35,
                 "front_bumper": 1.30,
-                "rear_bumper": 1.25,
+                "rear_bumper": 1.30,
                 "fender": 1.20,
                 "quarter_panel": 1.20,
                 "hood": 1.15,
@@ -53,7 +54,7 @@ class VehicleComponentIdentifier:
             },
             "crack": {
                 "front_bumper": 1.55,  # Plastic bumper cracks are common
-                "rear_bumper": 1.45,
+                "rear_bumper": 1.55,
                 "fender": 0.90,
                 "hood": 0.70,
                 "door": 0.60,
@@ -70,6 +71,8 @@ class VehicleComponentIdentifier:
         damage_class: str,
         norm_bbox: Union[List[float], Tuple[float, float, float, float]],
         detector_conf: float = 1.0,
+        image: Optional[np.ndarray] = None,
+        viewpoint_hint: Optional[str] = None,
     ) -> Dict[str, Union[str, float, List[Dict[str, float]]]]:
         """Identify vehicle component from damage class and normalized bounding box.
 
@@ -123,10 +126,24 @@ class VehicleComponentIdentifier:
         # Calculate final calibrated confidence
         confidence = float(np.clip(top_prob * 1.15, 0.45, 0.95))
 
-        # Check front vs rear for bumpers and lamps based on vertical/horizontal position
+        # Disambiguate front vs rear bumper using visual taillight cues or viewpoint
         if primary_comp in ["front_bumper", "rear_bumper"]:
-            # If box is in lower middle, default to front_bumper unless specified
-            pass
+            if viewpoint_hint == "rear":
+                primary_comp = "rear_bumper"
+            elif viewpoint_hint == "front":
+                primary_comp = "front_bumper"
+            elif image is not None:
+                h, w = image.shape[:2]
+                upper_h = max(1, int(yc * h))
+                hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+                red1 = cv2.inRange(hsv, (0, 80, 60), (10, 255, 255))
+                red2 = cv2.inRange(hsv, (170, 80, 60), (180, 255, 255))
+                red = (red1 | red2) > 0
+                upper_pct = float(np.mean(red[:upper_h, :]) * 100)
+                if upper_pct > 0.5:
+                    primary_comp = "rear_bumper"
+                else:
+                    primary_comp = "front_bumper" 
 
         return {
             "primary_component": primary_comp,

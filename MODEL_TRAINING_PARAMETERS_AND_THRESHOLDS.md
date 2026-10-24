@@ -35,7 +35,7 @@ Instead of a single black box, the system decomposes damage assessment into five
                                              + HistGradientBoosting & Quantile Regressors
                                                      │
                                                      ▼
-                                     Final Dollar Estimate + 90% Confidence Interval
+                                     Final Dollar Estimate + 90% Prediction Interval
 ```
 
 ---
@@ -132,7 +132,7 @@ The project trains **4 distinct models**, each tailored to a specific phase of t
 - `random_state`: `42`
 
 #### Quantile Uncertainty Regressors (`LGBMRegressor`):
-Three separate quantile regressors are trained using Pinball Loss to construct an exact **90% Confidence Interval**:
+Three separate quantile regressors are trained using Pinball Loss to construct an exact **90% Prediction Interval**:
 1. **Lower Bound ($\alpha = 0.05$):** 5th percentile prediction ($\text{objective} = \text{'quantile'}, \text{alpha} = 0.05$).
 2. **Median ($\alpha = 0.50$):** 50th percentile prediction ($\text{objective} = \text{'quantile'}, \text{alpha} = 0.50$).
 3. **Upper Bound ($\alpha = 0.95$):** 95th percentile prediction ($\text{objective} = \text{'quantile'}, \text{alpha} = 0.95$).

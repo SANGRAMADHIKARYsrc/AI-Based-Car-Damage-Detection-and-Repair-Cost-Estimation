@@ -44,9 +44,9 @@
 
 ### 2. Teacher Viva / Questions & Answers
 - **Q1: Why not just train an end-to-end model (e.g. ResNet/ViT) to predict the cost directly?**
-  - *Answer:* Direct image regression treats collision cost as visual appearance only. A scratched bumper on a 2012 Honda Civic costs $350; on a 2024 Mercedes-Benz S-Class it costs $2,500. Direct CNNs cannot reliably untangle vehicle make, hidden mechanics, and parts catalogs without explicit semantic decomposition. Our experimental benchmark confirmed direct regression achieves negative $R^2$ (-0.0339) and $6,877 MAE, whereas our structured pipeline reduces error by 31.6%.
+  - *Answer:* Direct image regression treats collision cost as visual appearance only. A scratched bumper on a 2012 Honda Civic costs $350; on a 2024 Mercedes-Benz S-Class it costs $2,500. Direct CNNs cannot reliably untangle vehicle make, hidden mechanics, and parts catalogs without explicit semantic decomposition. Our experimental benchmark using simulated visual embeddings confirmed direct unguided regression achieves negative $R^2$ (-0.0339) and $6,877 MAE, whereas our structured pipeline reduces error by 31.6%.
 - **Q2: Which datasets are you using?**
-  - *Answer:* CarDD benchmark (4,000 annotated images for damage bounding boxes and damage classes), supplementary Kaggle car damage sets, and a calibrated 28,000-record actuarial repair claim dataset matching Copart damage profiles.
+  - *Answer:* CarDD benchmark (4,000 annotated images for damage bounding boxes and damage classes), supplementary Kaggle car damage sets, and a screened 19,178-record actuarial repair dataset from Copart (13,424 train).
 
 ---
 
@@ -61,7 +61,7 @@
    [Vehicle Image + Metadata]
               │
               ▼
-   Stage 1: YOLOv8n Damage Localization (mAP50: 0.74, 18.2ms latency)
+   Stage 1: YOLOv8n Damage Localization (mAP50: 0.65 test / 0.72 val, 13.1ms latency)
               │ (Bounding boxes + 15% spatial padding)
               ▼
    Stage 2: EfficientNet-B0 Damage Classifier (Dent, Scratch, Crack, Tear, Shatter)
@@ -104,7 +104,7 @@
 
 | Paradigm | Architecture Description | Test MAE ($) | Median AE ($) | Test $R^2$ | Explainability |
 |---|---|---|---|---|---|
-| **Paradigm B** | Direct End-to-End Image Regression (ResNet/EffNet) | $6,877.66 | $4,912.10 | -0.0339 | 20 / 100 (Black-Box) |
+| **Paradigm B** | Simulated Visual Proxy (Ridge on Latent Features) | $6,877.66 | $4,935.33 | -0.0339 | 20 / 100 (Unstructured) |
 | **Paradigm A** | Actuarial Metadata Only (No Images) | $4,672.92 | $3,012.45 | 0.4592 | 60 / 100 (Tabular Only) |
 | **Paradigm C (Ours)** | **Multi-Stage Structured Pipeline** | **$4,701.78** | **$3,048.67** | **0.4528** | **95 / 100 (Auditable)** |
 

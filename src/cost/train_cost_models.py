@@ -158,7 +158,7 @@ def train_and_benchmark(
     print(f"\nBest Model: {best_model_name} (MAE: ${benchmark_results[best_model_name]['mae_dollar']:,.2f})")
 
     # 2. Train Quantile Models for Prediction Intervals (alpha = 0.05, 0.50, 0.95 -> 90% interval)
-    print("\nFitting Quantile LightGBM models for 90% confidence intervals...")
+    print("\nFitting Quantile LightGBM models for 90% prediction intervals...")
     quantile_models = {}
     for alpha in [0.05, 0.50, 0.95]:
         q_model = lgb.LGBMRegressor(

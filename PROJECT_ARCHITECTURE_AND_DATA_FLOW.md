@@ -62,8 +62,8 @@ flowchart TD
         C -.-> |Vehicle Metadata: Year, Make, Drivetrain| O
         O --> P["ColumnTransformer Preprocessor"]
         P --> Q["HistGradientBoosting Champion Regressor"]
-        P --> R["Quantile Regressors (10th & 90th Percentiles)"]
-        Q & R --> S["Dollar Estimate + 90% Confidence Interval"]
+        P --> R["Quantile Regressors (5th & 95th Percentiles)"]
+        Q & R --> S["Dollar Estimate + 90% Prediction Interval"]
     end
 
     subgraph OUTPUT ["Output Rendering & Response"]
@@ -134,7 +134,7 @@ flowchart TD
   1. Passes the feature vector through the scikit-learn `ColumnTransformer` (`cost_preprocessor.joblib`), which applies `StandardScaler` to continuous numbers and `OneHotEncoder` to categorical fields.
   2. Evaluates the transformed vector using `HistGradientBoostingRegressor` (`best_cost_model.joblib`) to predict $\ln(\text{Cost} + 1)$.
   3. Applies the exponential transformation $\exp(y) - 1$ to calculate the expected repair cost in USD.
-  4. Evaluates the 10th and 90th percentile quantile regressors (`quantile_models.joblib`) to produce a rigorous 90% confidence interval $[\text{Lower Bound}, \text{Upper Bound}]$.
+  4. Evaluates the 5th and 95th percentile quantile regressors (`quantile_models.joblib`) to produce a rigorous 90% prediction interval $[\text{Lower Bound}, \text{Upper Bound}]$.
 
 ### Step 9: Annotation Overlay & Response Delivery
 - In `src/pipeline/damage_pipeline.py`, `_render_annotated_image()` draws bounding boxes with color-coded severity headers, component labels, and confidence percentages directly onto the image.
@@ -331,7 +331,7 @@ flowchart TD
 #### File: [`src/experiments/key_research_experiment.py`](file:///C:/Users/shiva/Desktop/Other%20Apps/AI-Based-Car-Damage-Detection-and-Repair-Cost-Estimation/src/experiments/key_research_experiment.py)
 - **Purpose**: Answers the core capstone research question by conducting an empirical comparative study across three paradigms:
   - **Paradigm A (Actuarial Metadata Only):** Uses vehicle attributes and insurance claims records without visual image inspection.
-  - **Paradigm B (Direct End-to-End Image Regression):** A CNN (ResNet-18) directly predicting repair cost from raw pixels.
+  - **Paradigm B (Simulated Unstructured Visual Proxy):** Analytical simulation of unguided visual embedding regression (Ridge on noisy synthetic latent visual damage features).
   - **Paradigm C (Proposed Multi-Stage Pipeline):** YOLO localization $\rightarrow$ Crop Classification $\rightarrow$ Component Ontology $\rightarrow$ DSI $\rightarrow$ Tabular Gradient Boosting.
 - **Function: `run_key_research_experiment()`**:
   - *Why it exists*: Generates empirical benchmark tables, MAE, RMSE, and $R^2$ comparisons, proving that **Paradigm C achieves lower error, tighter prediction intervals, and 100% auditable explainability**.

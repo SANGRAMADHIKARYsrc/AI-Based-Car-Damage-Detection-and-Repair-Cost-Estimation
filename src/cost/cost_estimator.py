@@ -15,6 +15,13 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+# Compatibility alias for scikit-learn Cython unpickling
+try:
+    import sklearn._loss._loss
+    sys.modules["_loss"] = sklearn._loss._loss
+except ImportError:
+    pass
+
 from typing import Any, Dict, List, Optional
 import joblib
 import numpy as np

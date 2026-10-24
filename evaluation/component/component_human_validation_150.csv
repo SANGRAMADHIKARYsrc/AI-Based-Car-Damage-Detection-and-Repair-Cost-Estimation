@@ -1,0 +1,151 @@
+sample_id,image_file,damage_type,bbox_norm_xc_yc_w_h,predicted_component,confidence,inference_method,copart_sector,ground_truth_component,notes
+1,000033.jpg,dent,"0.2001,0.3066,0.4002,0.1422",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Dent on front hood surface
+2,000044.jpg,crack,"0.5180,0.2661,0.0564,0.2722",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Crack/crease across front hood
+3,000082.jpg,lamp broken,"0.6558,0.0714,0.4459,0.1429",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken headlamp assembly
+4,000088.jpg,crack,"0.4393,0.4670,0.1270,0.4543",door,0.45,spatial_affinity_fusion,SIDE,door,Crack on lower door crease
+5,000106.jpg,lamp broken,"0.3069,0.3194,0.4214,0.3113",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken headlamp assembly
+6,000191.jpg,dent,"0.5634,0.6411,0.2630,0.2440",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on rear passenger door
+7,000191.jpg,lamp broken,"0.4221,0.4615,0.4901,0.1847",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken rear taillight assembly
+8,000204.jpg,glass shatter,"0.5038,0.4127,0.6189,0.5812",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered front windshield
+9,000237.jpg,dent,"0.6990,0.5407,0.2021,0.2231",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on front door skin
+10,000253.jpg,glass shatter,"0.5085,0.4312,0.9829,0.7171",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+11,000267.jpg,glass shatter,"0.5291,0.4614,0.9419,0.6225",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+12,000297.jpg,lamp broken,"0.7257,0.5000,0.5351,1.0000",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken lamp assembly
+13,000310.jpg,glass shatter,"0.5013,0.5000,0.9973,1.0000",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Full frame shattered glass
+14,000353.jpg,tire flat,"0.6229,0.4601,0.5036,0.7026",wheel_tire,0.99,deterministic_semantic,SIDE,wheel_tire,Flat tire on alloy rim
+15,000387.jpg,lamp broken,"0.4175,0.6116,0.6775,0.4524",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken lamp
+16,000452.jpg,dent,"0.6772,0.4833,0.4470,0.9431",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door panel
+17,000468.jpg,dent,"0.6846,0.8861,0.0857,0.0723",rear_bumper,0.531,spatial_affinity_fusion,REAR END,rear_bumper,Dent on rear bumper corner beneath taillight
+18,000513.jpg,scratch,"0.2691,0.7024,0.2233,0.2634",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on front quarter fender
+19,000520.jpg,dent,"0.1889,0.5494,0.1309,0.2500",fender,0.45,spatial_affinity_fusion,SIDE,fender,Dent on front fender
+20,000541.jpg,scratch,"0.5116,0.5573,0.3556,0.5059",door,0.572,spatial_affinity_fusion,SIDE,door,Door scratch
+21,000541.jpg,scratch,"0.7106,0.1907,0.1745,0.3754",roof,0.548,spatial_affinity_fusion,ROLLOVER,roof,Roof rail scratch
+22,000565.jpg,glass shatter,"0.5202,0.4609,0.9595,0.9217",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+23,000570.jpg,dent,"0.5780,0.3930,0.1133,0.1632",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Dent on front engine hood
+24,000611.jpg,lamp broken,"0.2901,0.2106,0.5801,0.4212",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken headlamp
+25,000693.jpg,glass shatter,"0.4702,0.4721,0.8744,0.6740",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered rear glass
+26,000698.jpg,scratch,"0.6789,0.8029,0.5362,0.3941",rear_bumper,0.45,spatial_affinity_fusion,REAR END,rear_bumper,Detached scraped rear bumper on sedan
+27,000796.jpg,scratch,"0.7397,0.8268,0.1856,0.1482",front_bumper,0.454,spatial_affinity_fusion,FRONT END,rear_bumper,Scratches on rear bumper corner near trunk
+28,000811.jpg,crack,"0.7406,0.9304,0.0442,0.0636",front_bumper,0.567,spatial_affinity_fusion,FRONT END,front_bumper,Crack on front bumper below headlight
+29,000856.jpg,scratch,"0.6612,0.3563,0.2877,0.1755",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Scratch on hood
+30,000883.jpg,dent,"0.4270,0.4425,0.7088,0.6537",door,0.477,spatial_affinity_fusion,SIDE,door,Dent across door skin
+31,000914.jpg,glass shatter,"0.4241,0.4513,0.8482,0.8675",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+32,000965.jpg,dent,"0.5960,0.7370,0.3799,0.5260",front_bumper,0.45,spatial_affinity_fusion,FRONT END,door,Large dent on Land Rover side door
+33,000965.jpg,glass shatter,"0.5334,0.2883,0.2732,0.3815",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered side window glass
+34,000969.jpg,tire flat,"0.5026,0.5511,0.6642,0.8528",wheel_tire,0.99,deterministic_semantic,SIDE,wheel_tire,Flat tire
+35,001122.jpg,scratch,"0.4139,0.7436,0.3264,0.1171",front_bumper,0.45,spatial_affinity_fusion,FRONT END,front_bumper,Scratch on front corner bumper
+36,001163.jpg,tire flat,"0.4869,0.5160,0.6171,0.7901",wheel_tire,0.99,deterministic_semantic,SIDE,wheel_tire,Flat tire
+37,001169.jpg,dent,"0.4752,0.6604,0.3700,0.3877",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+38,001240.jpg,dent,"0.5036,0.3916,0.2505,0.2977",hood,0.489,spatial_affinity_fusion,FRONT END,hood,Dent on hood
+39,001259.jpg,dent,"0.2685,0.7327,0.5369,0.4872",rear_bumper,0.45,spatial_affinity_fusion,REAR END,door,Large dent on lower side door of red car
+40,001272.jpg,dent,"0.3106,0.5653,0.3073,0.5936",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+41,001282.jpg,scratch,"0.5605,0.4674,0.2071,0.2918",door,0.502,spatial_affinity_fusion,SIDE,door,Scratch on door
+42,001314.jpg,scratch,"0.2880,0.9597,0.1356,0.0695",rear_bumper,0.545,spatial_affinity_fusion,REAR END,front_bumper,Scratch on front bumper below headlight
+43,001314.jpg,lamp broken,"0.3797,0.3252,0.5745,0.4043",lamp,0.99,deterministic_semantic,FRONT END,lamp,Cracked front headlight
+44,001367.jpg,scratch,"0.1836,0.4354,0.0540,0.0941",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+45,001394.jpg,lamp broken,"0.5652,0.2785,0.8697,0.5569",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken lamp
+46,001402.jpg,scratch,"0.1542,0.4719,0.2784,0.0442",quarter_panel,0.45,spatial_affinity_fusion,REAR END,quarter_panel,Scratch on rear quarter panel
+47,001437.jpg,dent,"0.5246,0.4422,0.4718,0.7627",door,0.508,spatial_affinity_fusion,SIDE,fender,Dent on front fender
+48,001437.jpg,scratch,"0.5139,0.7575,0.4759,0.2990",front_bumper,0.45,spatial_affinity_fusion,FRONT END,fender,Scratch along wheel arch of front fender
+49,001488.jpg,dent,"0.3902,0.4783,0.2222,0.1842",door,0.464,spatial_affinity_fusion,SIDE,door,Dent on door
+50,001493.jpg,scratch,"0.3523,0.5289,0.2679,0.1458",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+51,001493.jpg,tire flat,"0.6053,0.7632,0.1132,0.3394",wheel_tire,0.99,deterministic_semantic,SIDE,wheel_tire,Flat tire
+52,001506.jpg,scratch,"0.4717,0.4890,0.3136,0.4445",door,0.547,spatial_affinity_fusion,SIDE,door,Scratch on door
+53,001536.jpg,scratch,"0.5589,0.8072,0.3699,0.3855",front_bumper,0.475,spatial_affinity_fusion,FRONT END,rear_bumper,Crumpled scraped rear bumper on sedan
+54,001536.jpg,crack,"0.4331,0.7148,0.0685,0.1974",front_bumper,0.45,spatial_affinity_fusion,FRONT END,rear_bumper,Fracture tear on rear bumper below taillight cavity
+55,001587.jpg,scratch,"0.3843,0.5766,0.5786,0.6901",door,0.471,spatial_affinity_fusion,SIDE,door,Scratch on door
+56,001610.jpg,dent,"0.7121,0.6338,0.5758,0.4943",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+57,001637.jpg,scratch,"0.7817,0.6143,0.4367,0.3709",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on fender
+58,001660.jpg,glass shatter,"0.5000,0.4813,1.0000,0.7917",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+59,001665.jpg,scratch,"0.7270,0.8867,0.5005,0.2267",rear_bumper,0.518,spatial_affinity_fusion,REAR END,front_bumper,Scraped front bumper below broken headlamp
+60,001671.jpg,dent,"0.7881,0.5094,0.4238,0.5667",fender,0.45,spatial_affinity_fusion,SIDE,fender,Dent on front fender
+61,001720.jpg,scratch,"0.4234,0.7031,0.0993,0.5938",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on lower door
+62,001746.jpg,scratch,"0.5615,0.6168,0.3837,0.1452",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+63,001751.jpg,scratch,"0.6876,0.6559,0.4743,0.2650",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+64,001768.jpg,scratch,"0.5208,0.5027,0.6697,0.5312",door,0.542,spatial_affinity_fusion,SIDE,door,Scratch on door
+65,001799.jpg,dent,"0.6872,0.2267,0.0353,0.1071",roof,0.45,spatial_affinity_fusion,ROLLOVER,roof,Dent on roof panel
+66,001799.jpg,scratch,"0.6965,0.4780,0.1787,0.3264",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+67,001800.jpg,scratch,"0.3714,0.6258,0.0655,0.5225",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+68,001809.jpg,scratch,"0.7381,0.4402,0.4163,0.4629",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+69,001837.jpg,scratch,"0.4600,0.7838,0.2288,0.0550",rear_bumper,0.455,spatial_affinity_fusion,REAR END,door,Scratch on lower door of Mini Cooper
+70,001879.jpg,scratch,"0.3502,0.9621,0.2083,0.0758",front_bumper,0.547,spatial_affinity_fusion,FRONT END,door,Scratch at bottom edge of door
+71,001885.jpg,tire flat,"0.3761,0.6090,0.4776,0.7261",wheel_tire,0.99,deterministic_semantic,SIDE,wheel_tire,Flat tire
+72,001917.jpg,lamp broken,"0.1365,0.4630,0.2366,0.6685",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken lamp
+73,001963.jpg,scratch,"0.3635,0.5281,0.4166,0.9438",door,0.463,spatial_affinity_fusion,SIDE,door,Scratch on door
+74,001967.jpg,dent,"0.6246,0.5476,0.2764,0.3167",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+75,002062.jpg,scratch,"0.4495,0.6591,0.1976,0.1085",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+76,002125.jpg,scratch,"0.3937,0.3082,0.1296,0.1138",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Scratch on hood
+77,002138.jpg,scratch,"0.6542,0.5436,0.1387,0.1040",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+78,002169.jpg,scratch,"0.3929,0.5779,0.4484,0.2388",door,0.461,spatial_affinity_fusion,SIDE,door,Scratch on door
+79,002169.jpg,scratch,"0.6396,0.8368,0.7207,0.1584",rear_bumper,0.493,spatial_affinity_fusion,REAR END,rear_bumper,Punctured cracked black plastic rear bumper
+80,002169.jpg,crack,"0.4621,0.4611,0.4006,0.2165",hood,0.45,spatial_affinity_fusion,FRONT END,quarter_panel,Crack on rear quarter panel above bumper
+81,002189.jpg,dent,"0.9366,0.3808,0.1268,0.1810",quarter_panel,0.45,spatial_affinity_fusion,REAR END,quarter_panel,Dent on rear quarter panel
+82,002189.jpg,scratch,"0.8292,0.3906,0.1298,0.1852",quarter_panel,0.45,spatial_affinity_fusion,REAR END,quarter_panel,Scratch on rear quarter panel
+83,002213.jpg,crack,"0.1885,0.6843,0.0676,0.0364",fender,0.45,spatial_affinity_fusion,SIDE,front_bumper,Crack on Volvo front bumper
+84,002235.jpg,scratch,"0.1241,0.8833,0.2482,0.2335",front_bumper,0.476,spatial_affinity_fusion,FRONT END,door,Scratch on rear passenger door next to fuel flap
+85,002262.jpg,scratch,"0.9315,0.6912,0.0975,0.1190",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on front fender
+86,002267.jpg,crack,"0.3190,0.6316,0.2840,0.3107",fender,0.45,spatial_affinity_fusion,SIDE,fender,Crack on fender
+87,002294.jpg,crack,"0.7947,0.4864,0.1373,0.1190",fender,0.45,spatial_affinity_fusion,SIDE,fender,Crack on fender
+88,002307.jpg,glass shatter,"0.4566,0.6022,0.9133,0.7956",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered glass
+89,002314.jpg,dent,"0.6308,0.3878,0.4719,0.4947",hood,0.45,spatial_affinity_fusion,FRONT END,quarter_panel,Dent on rear quarter panel above rear bumper
+90,002314.jpg,scratch,"0.6154,0.7484,0.3636,0.4074",rear_bumper,0.45,spatial_affinity_fusion,REAR END,rear_bumper,Cracked rear bumper on Pajero Sport
+91,002356.jpg,dent,"0.3544,0.4347,0.3823,0.1961",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+92,002356.jpg,lamp broken,"0.6310,0.5642,0.1871,0.1636",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken taillight
+93,002358.jpg,dent,"0.4410,0.5066,0.5152,0.6984",door,0.522,spatial_affinity_fusion,SIDE,door,Dent on door
+94,002407.jpg,scratch,"0.5861,0.3820,0.2427,0.2766",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+95,002409.jpg,dent,"0.4579,0.5604,0.2193,0.3160",door,0.543,spatial_affinity_fusion,SIDE,door,Dent on door
+96,002448.jpg,dent,"0.3309,0.5593,0.2745,0.3979",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+97,002461.jpg,dent,"0.5128,0.5657,0.7059,0.7377",door,0.563,spatial_affinity_fusion,SIDE,door,Dent on door
+98,002475.jpg,dent,"0.5789,0.2288,0.2514,0.2383",roof,0.45,spatial_affinity_fusion,ROLLOVER,roof,Dent on roof
+99,002498.jpg,dent,"0.3121,0.3298,0.3823,0.0767",hood,0.45,spatial_affinity_fusion,FRONT END,door,Dent near door handle
+100,002498.jpg,dent,"0.4560,0.7062,0.3510,0.3512",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on lower door skin
+101,002514.jpg,scratch,"0.2431,0.6142,0.4862,0.7717",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on fender
+102,002534.jpg,dent,"0.2217,0.5424,0.0387,0.0750",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+103,002545.jpg,scratch,"0.0887,0.5269,0.1774,0.5137",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on fender
+104,002567.jpg,dent,"0.5775,0.6424,0.4688,0.1959",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+105,002590.jpg,dent,"0.5506,0.6622,0.5910,0.6755",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+106,002597.jpg,dent,"0.5591,0.4425,0.1417,0.1678",door,0.482,spatial_affinity_fusion,SIDE,door,Dent on door
+107,002601.jpg,crack,"0.5719,0.6831,0.0149,0.0515",front_bumper,0.45,spatial_affinity_fusion,FRONT END,front_bumper,Fine crack on front bumper
+108,002664.jpg,glass shatter,"0.5056,0.5179,0.9888,0.7663",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+109,002707.jpg,dent,"0.4829,0.1803,0.2468,0.2135",roof,0.725,spatial_affinity_fusion,ROLLOVER,roof,Dent on roof
+110,002707.jpg,scratch,"0.2660,0.3031,0.5065,0.3308",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Scratch on hood
+111,002716.jpg,scratch,"0.4554,0.7860,0.1519,0.1592",rear_bumper,0.45,spatial_affinity_fusion,REAR END,rear_bumper,Scratches on white sedan rear bumper
+112,002716.jpg,scratch,"0.7188,0.3784,0.3483,0.1265",hood,0.45,spatial_affinity_fusion,FRONT END,rear_bumper,Paint peeling on rear bumper below taillight
+113,002728.jpg,scratch,"0.6367,0.5944,0.0748,0.2005",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+114,002810.jpg,crack,"0.4959,0.4974,0.0272,0.3853",door,0.457,spatial_affinity_fusion,SIDE,door,Crack on door
+115,002825.jpg,scratch,"0.2094,0.4639,0.2442,0.4405",door,0.45,spatial_affinity_fusion,SIDE,door,Scratch on door
+116,002849.jpg,scratch,"0.3081,0.2807,0.6090,0.1228",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Scratch on hood
+117,002858.jpg,scratch,"0.2338,0.9178,0.0722,0.1644",front_bumper,0.526,spatial_affinity_fusion,FRONT END,rear_bumper,Scratch on rear bumper
+118,002879.jpg,scratch,"0.4602,0.6006,0.6363,0.3849",door,0.502,spatial_affinity_fusion,SIDE,door,Scratch on door
+119,002914.jpg,scratch,"0.2586,0.0858,0.4353,0.0796",roof,0.95,spatial_affinity_fusion,ROLLOVER,roof,Scratch on roof
+120,002931.jpg,lamp broken,"0.7443,0.1092,0.5115,0.2183",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken lamp
+121,002986.jpg,dent,"0.6816,0.5877,0.1793,0.2622",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+122,003039.jpg,glass shatter,"0.5000,0.5017,1.0000,0.7428",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+123,003062.jpg,glass shatter,"0.5000,0.5364,1.0000,0.9272",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+124,003175.jpg,glass shatter,"0.5405,0.2737,0.6322,0.3871",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered glass
+125,003187.jpg,scratch,"0.8762,0.2180,0.2230,0.0781",roof,0.45,spatial_affinity_fusion,ROLLOVER,roof,Scratch on roof edge
+126,003233.jpg,glass shatter,"0.5000,0.5000,1.0000,1.0000",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered glass
+127,003246.jpg,dent,"0.7515,0.4928,0.2007,0.1227",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+128,003256.jpg,glass shatter,"0.5000,0.5443,1.0000,0.9113",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+129,003268.jpg,dent,"0.2789,0.8562,0.2403,0.2875",front_bumper,0.485,spatial_affinity_fusion,FRONT END,door,Dent on coupe door
+130,003291.jpg,lamp broken,"0.3651,0.4675,0.3937,0.9350",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken lamp
+131,003338.jpg,glass shatter,"0.5160,0.2916,0.2643,0.1378",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+132,003354.jpg,scratch,"0.4663,0.8195,0.2439,0.2497",rear_bumper,0.492,spatial_affinity_fusion,REAR END,rear_bumper,Detached scratched rear bumper on gold sedan
+133,003399.jpg,lamp broken,"0.6591,0.3829,0.6819,0.7659",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken lamp
+134,003407.jpg,scratch,"0.4015,0.5936,0.4519,0.1093",door,0.458,spatial_affinity_fusion,SIDE,door,Scratch on door
+135,003414.jpg,scratch,"0.9117,0.6231,0.1765,0.1325",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on fender
+136,003464.jpg,scratch,"0.5934,0.2627,0.1503,0.4494",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Scratch on hood
+137,003472.jpg,scratch,"0.6060,0.5459,0.0654,0.2635",door,0.472,spatial_affinity_fusion,SIDE,door,Scratch on door
+138,003541.jpg,crack,"0.0557,0.2750,0.0202,0.1133",quarter_panel,0.45,spatial_affinity_fusion,REAR END,quarter_panel,Crack on quarter panel
+139,003734.jpg,crack,"0.4762,0.2866,0.0466,0.0782",hood,0.45,spatial_affinity_fusion,FRONT END,hood,Crack on hood
+140,003743.jpg,dent,"0.0920,0.4900,0.1840,0.5369",fender,0.45,spatial_affinity_fusion,SIDE,fender,Dent on fender
+141,003768.jpg,glass shatter,"0.6170,0.5000,0.7659,1.0000",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+142,003793.jpg,glass shatter,"0.5000,0.5975,1.0000,0.8049",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield
+143,003812.jpg,glass shatter,"0.3917,0.4471,0.6477,0.6461",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered glass
+144,003879.jpg,dent,"0.5218,0.6610,0.5524,0.5539",door,0.45,spatial_affinity_fusion,SIDE,door,Dent on door
+145,003879.jpg,lamp broken,"0.7241,0.1936,0.5518,0.3871",lamp,0.99,deterministic_semantic,FRONT END,lamp,Broken taillight
+146,003925.jpg,scratch,"0.7511,0.7051,0.1536,0.2464",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on fender
+147,003925.jpg,scratch,"0.8481,0.6419,0.0642,0.1627",fender,0.45,spatial_affinity_fusion,SIDE,fender,Scratch on fender
+148,003948.jpg,scratch,"0.5089,0.8295,0.3190,0.3410",front_bumper,0.508,spatial_affinity_fusion,FRONT END,front_bumper,Scratch on front bumper
+149,003948.jpg,crack,"0.4394,0.6951,0.0259,0.1187",front_bumper,0.45,spatial_affinity_fusion,FRONT END,front_bumper,Crack on front bumper
+150,003959.jpg,glass shatter,"0.5000,0.5000,1.0000,1.0000",windshield_glass,0.99,deterministic_semantic,MINOR DENT/SCRATCHES,windshield_glass,Shattered windshield

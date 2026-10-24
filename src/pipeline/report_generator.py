@@ -53,7 +53,7 @@ class InspectionReportGenerator:
 
 ## Actuarial Repair Cost Estimate
 - **Estimated Repair Cost:** **${cost_est['estimated_cost_usd']:,.2f}**
-- **90% Confidence Interval:** **${cost_est['confidence_interval_90_usd']['lower_bound']:,.2f} — ${cost_est['confidence_interval_90_usd']['upper_bound']:,.2f}**
+- **90% Prediction Interval:** **${cost_est['confidence_interval_90_usd']['lower_bound']:,.2f} — ${cost_est['confidence_interval_90_usd']['upper_bound']:,.2f}**
 - **Primary Cost Driver:** {cost_est['primary_cost_driver']}
 
 ---

@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lc = inr ? "en-IN" : "en-US";
     const L = Math.round(lo*m), H = Math.round(hi*m), P = Math.round(pt*m);
     if (resCost) resCost.textContent = `${s}${L.toLocaleString(lc)} – ${s}${H.toLocaleString(lc)}`;
-    if (resCi) resCi.textContent = `Point: ${s}${P.toLocaleString(lc)} | 90% CI`;
+    if (resCi) resCi.textContent = `Point: ${s}${P.toLocaleString(lc)} | 90% PI`;
     renderReports();
   }
 

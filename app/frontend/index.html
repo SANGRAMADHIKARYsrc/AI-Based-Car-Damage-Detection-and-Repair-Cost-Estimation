@@ -336,13 +336,13 @@
           <div class="card"><h3 class="card-heading">Detection</h3><table class="data-table"><tbody>
             <tr><td>Architecture</td><td class="mono">YOLOv8 Nano (3.2M params)</td></tr>
             <tr><td>Damage Classes</td><td class="mono">Dent, Scratch, Crack, Tear, Shatter</td></tr>
-            <tr><td>mAP@50</td><td class="mono accent">0.741</td></tr>
-            <tr><td>Severity Classifier</td><td class="mono">EfficientNet-B0 (3-class)</td></tr>
+            <tr><td>mAP@50</td><td class="mono accent">0.649 (test) / 0.717 (val)</td></tr>
+            <tr><td>Severity Classifier</td><td class="mono">ResNet-18 (3-class)</td></tr>
           </tbody></table></div>
           <div class="card"><h3 class="card-heading">Cost Model</h3><table class="data-table"><tbody>
             <tr><td>Regressor</td><td class="mono">HistGradientBoosting</td></tr>
             <tr><td>Quantile Loss</td><td class="mono">α = 0.05, 0.50, 0.95</td></tr>
-            <tr><td>Training Data</td><td class="mono">Copart 28k claims (USD)</td></tr>
+            <tr><td>Training Data</td><td class="mono">Copart 19.2k records (13.4k train)</td></tr>
             <tr><td>Output</td><td class="mono">Dual USD / INR interval</td></tr>
           </tbody></table></div>
         </div>

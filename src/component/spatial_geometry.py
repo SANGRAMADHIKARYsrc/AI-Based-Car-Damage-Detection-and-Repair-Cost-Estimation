@@ -40,13 +40,13 @@ class SpatialComponentPrior:
                 "mu_x": 0.50, "sigma_x": 0.25,
                 "mu_y": 0.80, "sigma_y": 0.12,
                 "preferred_ar": 2.2, "ar_weight": 0.20,
-                "base_prior": 0.22,
+                "base_prior": 0.18,
             },
             "rear_bumper": {
                 "mu_x": 0.50, "sigma_x": 0.25,
-                "mu_y": 0.78, "sigma_y": 0.12,
+                "mu_y": 0.80, "sigma_y": 0.12,
                 "preferred_ar": 2.0, "ar_weight": 0.15,
-                "base_prior": 0.15,
+                "base_prior": 0.18,
             },
             "door": {
                 "mu_x": 0.48, "sigma_x": 0.25,
@@ -74,7 +74,7 @@ class SpatialComponentPrior:
             },
             "wheel_tire": {
                 "mu_x": 0.32, "sigma_x": 0.22,
-                "mu_y": 0.78, "sigma_y": 0.12,
+                "mu_y": 0.80, "sigma_y": 0.12,
                 "preferred_ar": 1.0, "ar_weight": 0.20,
                 "base_prior": 0.10,
             },

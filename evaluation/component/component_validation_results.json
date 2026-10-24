@@ -1,0 +1,215 @@
+{
+  "num_annotated": 150,
+  "overall_accuracy": 0.8733,
+  "macro_f1": 0.8477,
+  "weighted_f1": 0.8818,
+  "present_classes": [
+    "door",
+    "fender",
+    "front_bumper",
+    "hood",
+    "lamp",
+    "quarter_panel",
+    "rear_bumper",
+    "roof",
+    "wheel_tire",
+    "windshield_glass"
+  ],
+  "confusion_matrix": [
+    [
+      47,
+      0,
+      4,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      13,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      5,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      14,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      1,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      21
+    ]
+  ],
+  "classification_report": {
+    "door": {
+      "precision": 0.9791666666666666,
+      "recall": 0.8703703703703703,
+      "f1-score": 0.9215686274509803,
+      "support": 54.0
+    },
+    "fender": {
+      "precision": 0.9285714285714286,
+      "recall": 0.8666666666666667,
+      "f1-score": 0.896551724137931,
+      "support": 15.0
+    },
+    "front_bumper": {
+      "precision": 0.35714285714285715,
+      "recall": 0.625,
+      "f1-score": 0.45454545454545453,
+      "support": 8.0
+    },
+    "hood": {
+      "precision": 0.7142857142857143,
+      "recall": 1.0,
+      "f1-score": 0.8333333333333334,
+      "support": 10.0
+    },
+    "lamp": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 14.0
+    },
+    "quarter_panel": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.8,
+      "support": 6.0
+    },
+    "rear_bumper": {
+      "precision": 0.6,
+      "recall": 0.5454545454545454,
+      "f1-score": 0.5714285714285714,
+      "support": 11.0
+    },
+    "roof": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "wheel_tire": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    },
+    "windshield_glass": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 21.0
+    },
+    "accuracy": 0.8733333333333333,
+    "macro avg": {
+      "precision": 0.8579166666666668,
+      "recall": 0.8574158249158248,
+      "f1-score": 0.847742771089627,
+      "support": 150.0
+    },
+    "weighted avg": {
+      "precision": 0.9026904761904763,
+      "recall": 0.8733333333333333,
+      "f1-score": 0.8817892866655545,
+      "support": 150.0
+    }
+  }
+}
