@@ -58,18 +58,24 @@ def get_pipeline() -> CarDamageAIPipeline:
 
 @app.get("/api/health")
 def health_check() -> Dict[str, Any]:
-    """Verify backend and deep learning model readiness."""
-    pipe = get_pipeline()
+    """Verify backend and server readiness."""
+    global pipeline
+    if pipeline is not None:
+        models_loaded = {
+            "yolo_detector": pipeline.two_stage_detector.detector is not None,
+            "crop_classifier": pipeline.two_stage_detector.classifier is not None,
+            "component_identifier": pipeline.component_identifier is not None,
+            "severity_assessor": pipeline.severity_assessor is not None,
+            "cost_regressor": pipeline.cost_estimator.model is not None,
+        }
+        device = pipeline.device
+    else:
+        models_loaded = {"status": "lazy_load_on_first_inference"}
+        device = "cuda"
     return {
         "status": "healthy",
-        "device": pipe.device,
-        "models_loaded": {
-            "yolo_detector": pipe.two_stage_detector.detector is not None,
-            "crop_classifier": pipe.two_stage_detector.classifier is not None,
-            "component_identifier": pipe.component_identifier is not None,
-            "severity_assessor": pipe.severity_assessor is not None,
-            "cost_regressor": pipe.cost_estimator.model is not None,
-        },
+        "device": device,
+        "models_loaded": models_loaded,
     }
 
 

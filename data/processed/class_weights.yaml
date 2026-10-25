@@ -1,35 +1,68 @@
-effective_number_samples_weights:
-  crack: 0.8622
-  dent: 0.4938
-  glass shatter: 1.0911
-  lamp broken: 1.0583
-  scratch: 0.4472
-  tire flat: 2.0474
+dataset_stats:
+  test:
+    class_distribution:
+      crack: 70
+      dent: 236
+      glass shatter: 71
+      lamp broken: 69
+      scratch: 307
+      tire flat: 32
+    corrupted_images: 0
+    orphan_images: 0
+    total_boxes: 785
+    total_images: 374
+    valid_images: 374
+  train:
+    class_distribution:
+      crack: 651
+      dent: 1806
+      glass shatter: 475
+      lamp broken: 494
+      scratch: 2560
+      tire flat: 225
+    corrupted_images: 0
+    orphan_images: 0
+    total_boxes: 6211
+    total_images: 2816
+    valid_images: 2816
+  val:
+    class_distribution:
+      crack: 177
+      dent: 501
+      glass shatter: 135
+      lamp broken: 141
+      scratch: 728
+      tire flat: 62
+    corrupted_images: 0
+    orphan_images: 0
+    total_boxes: 1744
+    total_images: 810
+    valid_images: 810
 inverse_frequency_weights:
-  crack: 1.5901
-  dent: 0.5732
-  glass shatter: 2.1793
-  lamp broken: 2.0955
-  scratch: 0.4044
-  tire flat: 4.6007
-recommended_loss_weights_tensor:
-- 0.5882
-- 0.494
-- 0.9797
-- 1.1469
-- 1.1247
-- 1.6665
+  crack: 1.6221
+  dent: 0.5728
+  glass shatter: 2.139
+  lamp broken: 2.0691
+  scratch: 0.4052
+  tire flat: 4.5664
+recommended_tensor_weights:
+- 0.5894
+- 0.4957
+- 0.9918
+- 1.1389
+- 1.1202
+- 1.6641
 smoothed_sqrt_weights:
-  crack: 0.9797
-  dent: 0.5882
-  glass shatter: 1.1469
-  lamp broken: 1.1247
-  scratch: 0.494
-  tire flat: 1.6665
-train_instance_counts:
-  crack: 651
-  dent: 1806
-  glass shatter: 475
-  lamp broken: 494
-  scratch: 2560
-  tire flat: 225
+  crack: 0.9918
+  dent: 0.5894
+  glass shatter: 1.1389
+  lamp broken: 1.1202
+  scratch: 0.4957
+  tire flat: 1.6641
+total_instances:
+  crack: 898
+  dent: 2543
+  glass shatter: 681
+  lamp broken: 704
+  scratch: 3595
+  tire flat: 319
